@@ -1,0 +1,238 @@
+import { Component, OnInit } from '@angular/core';
+import { Chart } from 'chart.js';
+//import io from 'socket.io-client';
+//const socket = io('http://localhost:3000');
+
+@Component({
+  selector: 'charts',
+  templateUrl: './charts.component.html',
+  styleUrls: ['./charts.component.scss']
+})
+
+export class ChartsComponent implements OnInit {
+  title = 'dashboard';
+  bar:any;
+  pie: any;
+  doughnut: any;
+  line:any;
+  dataValues= ''; 
+  dataIndexes='';
+  dataV;
+  showFirst: boolean = false;
+  showSecond: boolean = false;
+  showThird: boolean = false;
+  showFourth:  boolean = false;
+
+  constructor() {  }
+
+  ngOnInit() {
+    this.doughnutChart();
+
+    // socket.on('data1', (res) => {
+    //   this.updateChartData(this.chart, res, 0);
+    //   this.updateChartData(this.doughnut,res.slice(0,5), 0);
+    // })
+
+    // socket.on('data2', (res) => {
+    //   this.updateChartData(this.chart, res, 1);
+    // })
+
+  }
+
+  doughnutChart() {
+    this.dataValues= ''; 
+    this.showFirst = true;
+    this.showSecond = false;
+    this.showThird = false;
+    this.showFourth = false;
+    
+    
+    this.doughnut =  new Chart('doughnut', {
+      type: 'doughnut',
+      options: {
+        tooltips: {
+          enabled: false,
+        },
+        events: ['click'],
+        cutoutPercentage: 50,
+        layout: {
+          padding: {
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0
+          }
+      },
+        responsive: true,
+        title: {
+          display: true,
+        },legend: {
+          display:true,
+          position: 'bottom',
+          fullWidth: true,
+          labels: {
+            usePointStyle: true,
+          },
+          
+        },
+        animation: {
+					animateScale: true,
+					animateRotate: true
+        },
+
+        onClick: (e:any, item:any) => {
+          this.doughnut.update();
+          if(item[0]!== undefined){
+            item[0]._model.outerRadius += 10;
+            this.dataV = item[0]._chart.config.data.datasets[0];
+            this.dataIndexes = item[0]._index;
+          }
+          if(e.bubbles===true)
+            this.dataValues = this.dataV.data[this.dataIndexes]+"%";
+      },
+    },
+     
+      data: {
+				datasets: [{
+					data: [34,18,22,11,15],
+					backgroundColor: ["#716dff","#a47dfe","#44dec4","#4ebbfb","#f79160"],
+					label: 'Dataset 1',
+        }
+      ],
+        labels: ['Savings','Pension','Stocks','Credit Card Debt','Cryptocurrency'],
+			}
+    })
+  }
+
+  barChart(){
+    this.showFirst = false;
+    this.showSecond = true;
+    this.showThird = false;
+    this.showFourth = false;
+
+    this.bar = new Chart('bar', {
+      type: 'bar',
+      options: {
+        responsive: true,
+        title: {
+          display: true,
+        },
+        legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+          },
+        },
+      },
+      
+      data: {
+        labels: ['Savings','Pension','Stocks','Credit Card Debt','Cryptocurrency'],
+        datasets: [
+          {
+            type: 'bar',
+            label: 'My First dataset',
+            data: [34,18,22,11,15],
+            backgroundColor: 'rgba(255,0,255,0.4)',
+            borderColor: 'rgba(255,0,255,0.4)',
+            fill: false,
+          },
+        ]
+      }
+    });
+  }
+
+  pieChart(){
+    this.showThird = true;
+    this.showFirst = false;
+    this.showSecond = false;
+    this.showFourth = false;
+
+    this.pie = new Chart('pie',{
+      type: 'pie',
+      options: {
+        responsive: true,
+        title: {
+          display: true,
+        },legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+          },
+				},animation: {
+					animateScale: true,
+					animateRotate: true
+        },
+      },
+      data: {
+				datasets: [{
+					data: [34,18,22,11,15].reverse(),
+					backgroundColor: ["#716dff","#a47dfe","#44dec4","#4ebbfb","#f79160"],
+					label: 'Dataset 1'
+				}],
+        labels: ['Savings','Pension','Stocks','Credit Card Debt','Cryptocurrency'],
+      },
+    })
+  }
+
+  lineChart(){
+    this.showThird = false;
+    this.showFirst = false;
+    this.showSecond = false;
+    this.showFourth = true;
+
+    this.line = new Chart('line', {
+      type: 'line',
+    data: {
+      labels: ['Savings','Pension','Stocks','Credit Card Debt','Cryptocurrency'],
+     datasets: [{
+         label: 'Number of Items Sold in Months',
+         data: [34,18,22,11,15],
+         fill:true,
+         lineTension:0.2,
+         borderColor:"red",
+         borderWidth: 1
+     }]
+    }, 
+    options: {
+     title:{
+         display:true
+     },
+     legend: {
+      position: 'bottom',
+      labels: {
+        usePointStyle: true,
+      },
+    },
+     scales: {
+         yAxes: [{
+             ticks: {
+                 beginAtZero:true
+             }
+         }]
+     }
+    }
+    });
+  }
+
+//   addData(chart, label, data) {
+//     chart.data.labels.push(label);
+//     chart.data.datasets.forEach((dataset) => {
+//         dataset.data.push(data);
+//     });
+//     chart.update();
+// }
+
+// removeData(chart) {
+//     chart.data.labels.pop();
+//     chart.data.datasets.forEach((dataset) => {
+//         dataset.data.pop();
+//     });
+//     chart.update();
+// }
+
+// updateChartData(chart, data, dataSetIndex){
+//   chart.data.datasets[dataSetIndex].data = data;
+//   chart.update();
+// }
+
+}

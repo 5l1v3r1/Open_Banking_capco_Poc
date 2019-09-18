@@ -1,0 +1,203 @@
+import {
+  Component,
+  OnInit,
+  Injectable,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+//import { CometChat } from '@cometchat-pro/chat';
+
+import { SettingsService } from '@core';
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
+];
+
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styles: [
+    `.mat-raised-button {
+        margin-right: 8px;
+        margin-top: 8px;
+      }
+    `,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DashboardComponent implements OnInit, AfterViewInit {
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = ELEMENT_DATA;
+
+  constructor(private settings: SettingsService) {}
+
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    // TODO:
+    const chart2 = this.genChart2();
+
+    // NOTE:
+    this.settings.notice.subscribe(res => {
+      chart2.forceFit();
+    });
+  }
+
+  // Pie chart
+  genChart2() {
+    const text = [
+     'MIDNIGHT',
+      '3 AM',
+      '6 AM',
+      '9 AM',
+      'NOON',
+      '3 PM',
+      '6 PM',
+      '9 PM',
+    ];
+    const data = [];
+    for (let i = 0; i < 24; i++) {
+      const item: any = {};
+      item.type = i + '';
+      item.value = 10;
+      data.push(item);
+    }
+
+    const DataView = DataSet.DataView;
+    const dv = new DataView();
+   dv.source(data).transform({
+      type: 'percent',
+      field: 'value',
+      dimension: 'type',
+      as: 'percent',
+    });
+
+    const chart = new G2.Chart({
+      container: 'chart2',
+      forceFit: true,
+      height: 300,
+      padding: 50,
+    });
+    chart.legend(false);
+    chart.tooltip({
+      showTitle: false,
+    });
+
+    const bgView: any = chart.view();
+    bgView.coord('theta', {
+      innerRadius: 0.9,
+    });
+    bgView.source(dv);
+    bgView
+      .intervalStack()
+      .position('percent')
+      .color('type', ['rgba(255, 255, 255, 0)'])
+      .style({
+        stroke: '#444',
+        lineWidth: 1,
+      })
+      .tooltip(false)
+      .select(false);
+
+    // Center Text Pie Chart
+    bgView.guide().text({
+      position: ['50%', '50%'],
+      content: 'Pie Chart',
+      style: {
+        lineHeight: '240px',
+        fontSize: '30',
+        fill: '#262626',
+        textAlign: 'center',
+      },
+    });
+
+    const intervalView = chart.view();
+    intervalView.source(data);
+    intervalView.coord('polar', {
+      innerRadius: 0.9,
+    });
+    intervalView.axis(false);
+    intervalView
+      .interval()
+      .position('type*value')
+      .size('type', val => {
+        if (val % 3 === 0) {
+          return 4;
+        } else {
+          return 0;
+        }
+      })
+      .color('#444')
+      .tooltip(false)
+      .label('type', val => {
+        if (val % 3 === 0) {
+          return text[val / 3];
+        }
+        return '';
+      });
+    
+
+     // Tool Tip 
+    const userData = [
+      { type: 'test', value: 60 },
+      { type: '社交', value: 60 },
+      { type: '健身', value: 10 },
+      { type: '购物', value: 10 },
+      { type: '视频', value: 40 },
+      { type: '其它', value: 20 },
+      { type: '学习', value: 10 },
+      { type: '音乐', value: 30 },
+      { type: '游戏', value: 30 },
+    ];
+
+
+    const userDv = new DataView();
+    userDv.source(userData).transform({
+      type: 'percent',
+      field: 'value',
+      dimension: 'type',
+      as: 'percent',
+    });
+
+    const pieView = chart.view();
+    pieView.source(userDv, {
+      percent: {
+        formatter: function formatter(val) {
+          return (val * 100).toFixed(2) + '%';
+        },
+      },
+    });
+
+
+    pieView.coord('theta', {
+      innerRadius: 0.75,
+    });
+
+    // text with arrow
+    pieView
+      .intervalStack()
+      .position('percent')
+      .color('type')
+      .label('type', {
+        offset: 40,
+      })
+      .select(false);
+
+    chart.render();
+
+    return chart;
+  }
+}

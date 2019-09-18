@@ -1,0 +1,81 @@
+<div id="confirmation">
+        <h2>Transfer Type</h2>
+        <mat-divider></mat-divider>
+    
+        <div class="account-transfer">
+            <img src="assets/images/fund-transfer/group-2.svg" width="28" height="28"/>
+            <h3>Account Transfer</h3>
+        </div>
+    
+        <h4>Destination Account Info</h4>
+
+        <h5 class="highlight-text">
+            Review the account details of the beneficiary below. If you wish to modify the fields go to beneficiary section and edit the details.        
+        </h5>
+
+        <div class="container" fxLayout="row" fxLayout.xs="column">
+            <mat-card fxFlex="100%" fxFlex.sm="25%" class="bankDetails" >
+                <mat-grid-list cols="" fxLayout="row wrap">
+                    <p>Beneficiary Name</p>
+                    <p>Amanda Rhodes</p>
+                </mat-grid-list>
+            </mat-card>
+            <mat-card fxFlex="100%" fxFlex.sm="33.33%" class="bankDetails" >
+                <mat-grid-list cols="" fxLayout="row wrap">
+                    <p>Beneficiary A/C No</p>
+                    <p>8897654321789654</p>
+                </mat-grid-list>
+                </mat-card>
+                <mat-card fxFlex="100%" fxFlex.sm="33.33%" class="bankDetails" >
+                    <mat-grid-list cols="" fxLayout="row wrap">
+                        <p>Beneficiary SORT Code</p>
+                        <p>12-34-56</p>
+                    </mat-grid-list>
+                </mat-card>
+                    <mat-card fxFlex="100%" fxFlex.sm="33.33%" class="bankDetails" >
+                        <mat-grid-list cols="" fxLayout="row wrap">
+                        <p>Beneficiary Bank</p>
+                        <p>Citibank</p>
+                    </mat-grid-list>
+                </mat-card>
+        </div>
+          
+        <mat-divider></mat-divider>
+
+        <h4>Source Account Info</h4>
+
+        <h5 class="highlight-text">
+            Review the Source accounts details below
+        </h5>
+
+        <div class="container" fxLayout="row" fxLayout.xs="column">
+                <mat-card fxFlex="100%" fxFlex.sm="25%" class="bankDetails" >
+                    <mat-grid-list cols="" fxLayout="row wrap">
+                        <p>A/C No</p>
+                        <p>6789054321987</p>
+                    </mat-grid-list>
+                </mat-card>
+                <mat-card fxFlex="100%" fxFlex.sm="33.33%" class="bankDetails" >
+                    <mat-grid-list cols="" fxLayout="row wrap">
+                        <p>Bank Name</p>
+                        <p>ABC Bank</p>
+                    </mat-grid-list>
+                </mat-card>
+                <mat-card fxFlex="100%" fxFlex.sm="33.33%" class="bankDetails" >
+                    <mat-grid-list cols="" fxLayout="row wrap">
+                        <p>Transferring Amount</p>
+                        <p>12-34-56</p>
+                    </mat-grid-list>
+                </mat-card>
+            </div>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+        <button mat-button class="ob-proceed-button" (click)="openDialog()">
+            Proceed
+        </button>
+        <button mat-button class="ob-proceed-button">
+            Cancel
+        </button>
+    </mat-card-content>
+    
+    </div>

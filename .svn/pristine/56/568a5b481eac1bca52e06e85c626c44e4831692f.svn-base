@@ -1,0 +1,29 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '@shared/shared.module';
+import { TransactionsRoutingModule } from './transactions-routing.module';
+import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
+import { InquireTransactionsComponent } from './inquire-transactions/inquire-transactions.component';
+import { BillPaymentsComponent } from './bill-payments/bill-payments.component';
+import { MenuTabComponent } from './fund-transfer/menu-tab/menu-tab.component';
+import { TransferTypeComponent } from './fund-transfer/transfer-type/transfer-type.component';
+import { BeneficiaryListComponent } from './fund-transfer/create-beneficiary/beneficiary-list/beneficiary-list.component';
+import { AddBeneficiaryComponent } from './fund-transfer/create-beneficiary/add-beneficiary/add-beneficiary.component';
+import { TransferDetailsComponent } from './fund-transfer/transfer-details/transfer-details.component';
+import { AmountComponent } from './fund-transfer/amount/amount.component';
+import { BeficiaryTabComponent } from './fund-transfer/create-beneficiary/beficiary-tab/beficiary-tab.component';
+import { OtherBeneficiaryComponent } from './fund-transfer/create-beneficiary/other-beneficiary/other-beneficiary.component';
+import { MyAccountComponent } from './fund-transfer/create-beneficiary/my-account/my-account.component';
+
+@NgModule({
+  declarations: [
+    InquireTransactionsComponent,
+    FundTransferComponent,
+    BillPaymentsComponent, MenuTabComponent, TransferTypeComponent,
+    BeneficiaryListComponent, AddBeneficiaryComponent, TransferDetailsComponent, BeficiaryTabComponent,
+    OtherBeneficiaryComponent, MyAccountComponent, AmountComponent,
+    BeficiaryTabComponent
+  ],
+  imports: [CommonModule, SharedModule, TransactionsRoutingModule],
+})
+export class TransactionsModule {}

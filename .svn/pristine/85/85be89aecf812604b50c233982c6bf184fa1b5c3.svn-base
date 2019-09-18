@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from '@shared/shared.module';
+import { TransactionsRoutingModule } from './transactions-routing.module';
+import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
+import { CreateBeneficiaryComponent } from './create-beneficiary/create-beneficiary.component';
+import { InquireTransactionsComponent } from './inquire-transactions/inquire-transactions.component';
+import { TabsComponent } from './create-beneficiary/tabs/tabs.component';
+import { BeneficiaryListComponent } from './create-beneficiary/beneficiary-list/beneficiary-list.component';
+import { AddBeneficiaryComponent } from './create-beneficiary/add-beneficiary/add-beneficiary.component';
+
+@NgModule({
+  declarations: [
+    InquireTransactionsComponent,
+    FundTransferComponent, 
+    CreateBeneficiaryComponent, 
+    TabsComponent, BeneficiaryListComponent, AddBeneficiaryComponent
+  ],
+  imports: [CommonModule, SharedModule, TransactionsRoutingModule],
+})
+export class TransactionsModule {}

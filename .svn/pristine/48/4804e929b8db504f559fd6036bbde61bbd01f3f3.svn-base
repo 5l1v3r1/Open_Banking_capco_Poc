@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+
+// tslint:disable-next-line: class-name
+export interface bank_amount {
+  position: number;
+  bank_name: string;
+  account_number: number;
+  amount: string;
+}
+
+const AMOUNT_DATA: bank_amount[] = [
+  { position: 1, bank_name: 'HDFC Bank', account_number: 24566768654374, amount: '$61083.14' },
+  { position: 2, bank_name: 'ABC Bank', account_number: 65437585764666, amount: '$96873.01' },
+  { position: 3, bank_name: 'Citibank', account_number: 43256473478945, amount: '$61083.41' },
+  { position: 4, bank_name: 'DBS Bank', account_number: 43256473478945, amount: '$23046.58' }
+];
+
+@Component({
+  selector: 'app-amount',
+  templateUrl: './amount.component.html',
+  styleUrls: ['./amount.component.scss']
+})
+export class AmountComponent implements OnInit {
+  
+  displayedColumns: string[] = ['position', 'bank_name', 'account_number', 'amount'];
+  dataSource = AMOUNT_DATA;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

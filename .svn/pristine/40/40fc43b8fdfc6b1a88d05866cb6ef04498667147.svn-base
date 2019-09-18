@@ -1,0 +1,25 @@
+.select-beneficiary {
+    background-color: #716dff;
+    cursor: pointer;
+    .accountType-bottom-text  {
+      color: #fff;
+    }
+}
+
+.default-tile-border {
+    border: solid 1px #e4e6e5;
+    cursor: pointer;
+}
+
+.mat-card {
+    box-shadow: none;
+    width: 339px;
+}
+
+.active {
+    background-color: #716dff;
+}
+
+.default {
+    background-color: #e4e6e5;
+}

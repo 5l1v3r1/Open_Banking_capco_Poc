@@ -1,0 +1,53 @@
+@mixin heading{
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: normal;
+    color: #777;
+}
+#transfer-details{
+    h2{
+        @include heading;
+        font-size: 18px;
+    }
+    .account-transfer{
+        padding-top:20px;
+        h3{
+            @include heading;
+            font-size: 15px;
+            display: inline;
+            padding-left: 10px;
+            position: relative;
+            top:-7px;
+            color: #999;
+            font-weight: 400;
+        }
+    }
+    h4 {
+        @include heading;
+        color:#888;
+    }
+
+    .transferFormGroup {
+        fieldset{
+            border: 1px solid #ccc; 
+            margin-bottom: 20px;
+            legend {
+                color:#888;
+                font-size:12px;
+                font-family: Roboto;
+            }
+            input {
+                width: 100%;
+                border: none;
+            }
+        }
+    }
+    .ob-proceed-button {
+        padding: 0px 30px !important;
+        color: #716dff;
+        border: 1px solid #716dff;
+        background: #fff;
+        border-radius: 5px; 
+    }
+}
+

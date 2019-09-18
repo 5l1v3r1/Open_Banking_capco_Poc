@@ -1,0 +1,25 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { BeneficiaryService } from '../../../../services/beneficiary/beneficiary-service';
+
+@Component({
+  selector: 'app-other-beneficiary',
+  templateUrl: './other-beneficiary.component.html',
+  styleUrls: ['./other-beneficiary.component.scss',
+  '../my-account/my-account.component.scss'
+]
+})
+
+export class OtherBeneficiaryComponent implements OnInit {
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  resource = [];
+  displayedColumns: string[] = ['selectBeneficiary', 'name', 'accountno', 'bankname', 'edit', 'delete'];
+  constructor(private otherBeneficiary: BeneficiaryService) { }
+
+  ngOnInit() {
+    this.otherBeneficiary.getOtherBeneficiary().subscribe(data => {
+      this.resource = data;
+      //this.resource.paginator = this.paginator;
+    });
+  }
+}

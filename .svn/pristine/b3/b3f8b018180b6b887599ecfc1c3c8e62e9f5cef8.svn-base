@@ -1,0 +1,29 @@
+<div id="menu-tab">
+    <ul>
+        <li class="active">Transfer Type</li>
+        <li>Beneficiary</li>
+        <li>Amount</li> 
+        <li>Confirmation</li> 
+        <li>Status</li> 
+    </ul>
+</div>
+<div id="transfer-type">
+    <div class="container" fxLayout="row" fxLayout.xs="column">
+        <mat-card fxFlex="100%" fxFlex.sm="33.33%" *ngFor="let transferType of transferTypes; let i = index"
+            class="fund-transfer" (click)="highlightBox(i)" >
+            <mat-grid-list cols="" fxLayout="row wrap">
+                <mat-grid-tile class="transfer-way"  [ngClass]="{'transfer-type':true, 'selectfund': (selectedIndex === i) }">
+                    <img [src]="transferType.img">
+                    <p class="fund-transfer-bottom-text">{{ transferType.accInfo }}</p>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="button-container">
+        <button mat-button class="ob-proceed-button" routerLink="../beneficiary">Proceed</button>
+        <button mat-button class="ob-cancel-button">Cancel</button>
+    </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
+

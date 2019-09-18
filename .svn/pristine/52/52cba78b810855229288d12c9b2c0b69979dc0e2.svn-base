@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+
+const TRANSFERTYPE = [
+  {
+    img: './assets/images/fund-transfer/group-2.svg',
+    accInfo: 'Account Transfer'
+  },
+  {
+    img: './assets/images/fund-transfer/group-7.svg',
+    accInfo: 'Card Transfer'
+  },
+  {
+    img: './assets/images/fund-transfer/group-9.svg',
+    accInfo: 'Mobile Transfer'
+  }
+];
+
+@Component({
+  selector: 'app-transfer-type',
+  templateUrl: './transfer-type.component.html',
+  styleUrls: ['./transfer-type.component.scss']
+})
+export class TransferTypeComponent implements OnInit {
+
+  transferTypes = TRANSFERTYPE;
+  private isSelected: any;
+
+  constructor() {
+   }
+
+  setColor(value){
+    this.isSelected = value;
+  }
+
+  ngOnInit() {
+  }
+
+}

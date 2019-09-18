@@ -1,0 +1,30 @@
+import { Component } from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+
+export interface BeneficiaryElement {
+  name: string;
+  position: string;
+  bankname: string;
+}
+
+const ELEMENT_DATA: BeneficiaryElement[] = [
+  {position: '1', name: 'Rahul Dhiman', bankname: 'HDFC Bank'},
+  {position: '2', name: 'Paulraj C', bankname: 'ABC Bank'},
+  {position: '3', name: 'Ajay Bhagat', bankname: 'Deutsche Bank'},
+  {position: '4', name: 'Sanchita Gupta', bankname: 'DBS Bank'},
+  {position: '5', name: 'Sowmyashree Togunasi', bankname: 'Citibank'}
+];
+
+/**
+ * @title Basic use of `<table mat-table>`
+ */
+@Component({
+  selector: 'app-beneficiary-list',
+  templateUrl: './beneficiary-list.component.html',
+  styleUrls: ['./beneficiary-list.component.scss']
+})
+
+export class BeneficiaryListComponent {
+  displayedColumns: string[] = ['position', 'name', 'bankname'];
+  dataSource = ELEMENT_DATA;
+}

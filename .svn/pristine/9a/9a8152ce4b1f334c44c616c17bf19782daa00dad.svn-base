@@ -1,0 +1,43 @@
+import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { KeyValue } from '@angular/common';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDropList } from '@angular/cdk/drag-drop';
+
+
+@Component({
+  selector: 'app-account-summary',
+  templateUrl: './account-summary.component.html',
+  styleUrls: ['./account-summary.component.scss']
+})
+export class AccountSummaryComponent  {
+  // @Input() timeline
+  // @Input profile-info: profile-info;
+ timePeriods = ['profileinfo'];
+ timePeriods1 = ['charts'];
+ timePeriods2 = ['paymentsechdules'];
+  timePeriods3 = ['recentaction'];
+ timePeriods4 = ['transactiolist'];
+//   todo = ['profileinfo'];
+// activelist = ['welcome1', 'welcome2', 'welcome3'];
+// done = ['butter1', 'butter2', 'butter3'];
+
+ constructor() {
+//    for (let i = 0; i < 10; i++) {
+//    this.numbers.push(i);
+//  }
+}
+
+// drop(event: CdkDragDrop<string[]>) {
+//   moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
+// }
+
+onTaskDrop(event: CdkDragDrop<string[]>) {
+
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem( event.previousContainer.data,
+        event.container.data, event.previousIndex, event.currentIndex);
+    }
+  }
+
+}

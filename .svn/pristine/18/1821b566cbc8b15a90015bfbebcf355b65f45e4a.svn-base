@@ -1,0 +1,254 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import * as tslib_1 from "tslib";
+import { Component, ViewChild, ViewContainerRef, Renderer2 } from '@angular/core';
+import { FieldWrapper, ɵdefineHiddenProp as defineHiddenProp } from '@ngx-formly/core';
+import { MatFormField } from '@angular/material/form-field';
+import { MatFormFieldControl } from '@angular/material/form-field';
+import { Subject } from 'rxjs';
+import { FieldType } from './field.type';
+/**
+ * @record
+ */
+function MatFormlyFieldConfig() { }
+if (false) {
+    /** @type {?} */
+    MatFormlyFieldConfig.prototype._matprefix;
+    /** @type {?} */
+    MatFormlyFieldConfig.prototype._matsuffix;
+    /** @type {?} */
+    MatFormlyFieldConfig.prototype.__formField__;
+    /** @type {?} */
+    MatFormlyFieldConfig.prototype._componentFactory;
+}
+var FormlyWrapperFormField = /** @class */ (function (_super) {
+    tslib_1.__extends(FormlyWrapperFormField, _super);
+    function FormlyWrapperFormField(renderer) {
+        var _this = _super.call(this) || this;
+        _this.renderer = renderer;
+        _this.stateChanges = new Subject();
+        _this._errorState = false;
+        _this.initialGapCalculated = false;
+        return _this;
+    }
+    /**
+     * @return {?}
+     */
+    FormlyWrapperFormField.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        this.formField._control = this;
+        defineHiddenProp(this.field, '__formField__', this.formField);
+        /** @type {?} */
+        var fieldComponent = this.formlyField['_componentFactory'];
+        if (fieldComponent && !(fieldComponent.componentRef.instance instanceof FieldType)) {
+            console.warn("Component '" + fieldComponent.component.prototype.constructor.name + "' must extend 'FieldType' from '@ngx-formly/material'.");
+        }
+        // fix for https://github.com/angular/material2/issues/11437
+        if (this.formlyField.hide && (/** @type {?} */ (this.formlyField.templateOptions)).appearance === 'outline') {
+            this.initialGapCalculated = true;
+        }
+    };
+    /**
+     * @return {?}
+     */
+    FormlyWrapperFormField.prototype.ngAfterContentChecked = /**
+     * @return {?}
+     */
+    function () {
+        if (!this.initialGapCalculated || this.formlyField.hide) {
+            return;
+        }
+        this.formField.updateOutlineGap();
+        this.initialGapCalculated = true;
+    };
+    /**
+     * @return {?}
+     */
+    FormlyWrapperFormField.prototype.ngAfterViewInit = /**
+     * @return {?}
+     */
+    function () {
+        // temporary fix for https://github.com/angular/material2/issues/7891
+        if (this.formField.underlineRef && this.to.hideFieldUnderline === true) {
+            this.renderer.removeClass(this.formField.underlineRef.nativeElement, 'mat-form-field-underline');
+            this.renderer.removeClass(this.formField.underlineRef.nativeElement.firstChild, 'mat-form-field-ripple');
+        }
+    };
+    /**
+     * @return {?}
+     */
+    FormlyWrapperFormField.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        delete this.formlyField.__formField__;
+        this.stateChanges.complete();
+    };
+    /**
+     * @param {?} ids
+     * @return {?}
+     */
+    FormlyWrapperFormField.prototype.setDescribedByIds = /**
+     * @param {?} ids
+     * @return {?}
+     */
+    function (ids) { };
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    FormlyWrapperFormField.prototype.onContainerClick = /**
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        this.formlyField.focus = true;
+        this.stateChanges.next();
+    };
+    Object.defineProperty(FormlyWrapperFormField.prototype, "errorState", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            /** @type {?} */
+            var showError = (/** @type {?} */ ((/** @type {?} */ (this.options)).showError))(this);
+            if (showError !== this._errorState) {
+                this._errorState = showError;
+                this.stateChanges.next();
+            }
+            return showError;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "controlType", {
+        get: /**
+         * @return {?}
+         */
+        function () { return this.to.type; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "focused", {
+        get: /**
+         * @return {?}
+         */
+        function () { return !!this.formlyField.focus && !this.disabled; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "disabled", {
+        get: /**
+         * @return {?}
+         */
+        function () { return !!this.to.disabled; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "required", {
+        get: /**
+         * @return {?}
+         */
+        function () { return !!this.to.required; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "placeholder", {
+        get: /**
+         * @return {?}
+         */
+        function () { return this.to.placeholder || ''; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "shouldPlaceholderFloat", {
+        get: /**
+         * @return {?}
+         */
+        function () { return this.shouldLabelFloat; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "value", {
+        get: /**
+         * @return {?}
+         */
+        function () { return this.formControl.value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "ngControl", {
+        get: /**
+         * @return {?}
+         */
+        function () { return (/** @type {?} */ (this.formControl)); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "empty", {
+        get: /**
+         * @return {?}
+         */
+        function () { return !this.formControl.value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "shouldLabelFloat", {
+        get: /**
+         * @return {?}
+         */
+        function () { return this.focused || !this.empty; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FormlyWrapperFormField.prototype, "formlyField", {
+        get: /**
+         * @return {?}
+         */
+        function () { return (/** @type {?} */ (this.field)); },
+        enumerable: true,
+        configurable: true
+    });
+    FormlyWrapperFormField.decorators = [
+        { type: Component, args: [{
+                    selector: 'formly-wrapper-mat-form-field',
+                    template: "\n    <!-- fix https://github.com/angular/material2/pull/7083 by setting width to 100% -->\n    <mat-form-field\n      [hideRequiredMarker]=\"true\"\n      [floatLabel]=\"to.floatLabel\"\n      [appearance]=\"to.appearance\"\n      [color]=\"to.color\"\n      [style.width]=\"'100%'\">\n      <ng-container #fieldComponent></ng-container>\n      <mat-label *ngIf=\"to.label && to.hideLabel !== true\">\n        {{ to.label }}\n        <span *ngIf=\"to.required && to.hideRequiredMarker !== true\" class=\"mat-form-field-required-marker\">*</span>\n      </mat-label>\n\n      <ng-container matPrefix>\n        <ng-container *ngTemplateOutlet=\"to.prefix ? to.prefix : formlyField._matprefix\"></ng-container>\n      </ng-container>\n\n      <ng-container matSuffix>\n        <ng-container *ngTemplateOutlet=\"to.suffix ? to.suffix : formlyField._matsuffix\"></ng-container>\n      </ng-container>\n\n      <!-- fix https://github.com/angular/material2/issues/7737 by setting id to null  -->\n      <mat-error [id]=\"null\">\n        <formly-validation-message [field]=\"field\"></formly-validation-message>\n      </mat-error>\n      <!-- fix https://github.com/angular/material2/issues/7737 by setting id to null  -->\n      <mat-hint *ngIf=\"to.description\" [id]=\"null\">{{ to.description }}</mat-hint>\n    </mat-form-field>\n  ",
+                    providers: [{ provide: MatFormFieldControl, useExisting: FormlyWrapperFormField }]
+                }] }
+    ];
+    /** @nocollapse */
+    FormlyWrapperFormField.ctorParameters = function () { return [
+        { type: Renderer2 }
+    ]; };
+    FormlyWrapperFormField.propDecorators = {
+        fieldComponent: [{ type: ViewChild, args: ['fieldComponent', { read: ViewContainerRef },] }],
+        formField: [{ type: ViewChild, args: [MatFormField,] }]
+    };
+    return FormlyWrapperFormField;
+}(FieldWrapper));
+export { FormlyWrapperFormField };
+if (false) {
+    /** @type {?} */
+    FormlyWrapperFormField.prototype.fieldComponent;
+    /** @type {?} */
+    FormlyWrapperFormField.prototype.formField;
+    /** @type {?} */
+    FormlyWrapperFormField.prototype.stateChanges;
+    /** @type {?} */
+    FormlyWrapperFormField.prototype._errorState;
+    /**
+     * @type {?}
+     * @private
+     */
+    FormlyWrapperFormField.prototype.initialGapCalculated;
+    /**
+     * @type {?}
+     * @private
+     */
+    FormlyWrapperFormField.prototype.renderer;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9ybS1maWVsZC53cmFwcGVyLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQG5neC1mb3JtbHkvbWF0ZXJpYWwvZm9ybS1maWVsZC8iLCJzb3VyY2VzIjpbImZvcm0tZmllbGQud3JhcHBlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsU0FBUyxFQUFFLGdCQUFnQixFQUFxQixTQUFTLEVBQW1ELE1BQU0sZUFBZSxDQUFDO0FBQ3RKLE9BQU8sRUFBRSxZQUFZLEVBQUUsaUJBQWlCLElBQUksZ0JBQWdCLEVBQXFCLE1BQU0sa0JBQWtCLENBQUM7QUFDMUcsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLDhCQUE4QixDQUFDO0FBQzVELE9BQU8sRUFBRSxtQkFBbUIsRUFBRSxNQUFNLDhCQUE4QixDQUFDO0FBQ25FLE9BQU8sRUFBRSxPQUFPLEVBQUUsTUFBTSxNQUFNLENBQUM7QUFFL0IsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGNBQWMsQ0FBQzs7OztBQUV6QyxtQ0FLQzs7O0lBSkMsMENBQTZCOztJQUM3QiwwQ0FBNkI7O0lBQzdCLDZDQUFzQzs7SUFDdEMsaURBQXVCOztBQUd6QjtJQWtDNEMsa0RBQWtDO0lBUTVFLGdDQUFvQixRQUFtQjtRQUF2QyxZQUNFLGlCQUFPLFNBQ1I7UUFGbUIsY0FBUSxHQUFSLFFBQVEsQ0FBVztRQUp2QyxrQkFBWSxHQUFHLElBQUksT0FBTyxFQUFRLENBQUM7UUFDbkMsaUJBQVcsR0FBRyxLQUFLLENBQUM7UUFDWiwwQkFBb0IsR0FBRyxLQUFLLENBQUM7O0lBSXJDLENBQUM7Ozs7SUFFRCx5Q0FBUTs7O0lBQVI7UUFDRSxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsR0FBRyxJQUFJLENBQUM7UUFDL0IsZ0JBQWdCLENBQUMsSUFBSSxDQUFDLEtBQUssRUFBRSxlQUFlLEVBQUUsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDOztZQUV4RCxjQUFjLEdBQUcsSUFBSSxDQUFD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LFlBQVk7O0lBMEV6Qiw2QkFBQztDQUFBLEFBOUdELENBa0M0QyxZQUFZLEdBNEV2RDtTQTVFWSxzQkFBc0I7OztJQUNqQyxnREFBMkY7O0lBQzNGLDJDQUFrRDs7SUFFbEQsOENBQW1DOztJQUNuQyw2Q0FBb0I7Ozs7O0lBQ3BCLHNEQUFxQzs7Ozs7SUFFekIsMENBQTJCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBWaWV3Q2hpbGQsIFZpZXdDb250YWluZXJSZWYsIE9uSW5pdCwgT25EZXN0cm95LCBSZW5kZXJlcjIsIEFmdGVyVmlld0luaXQsIEFmdGVyQ29udGVudENoZWNrZWQsIFRlbXBsYXRlUmVmIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBGaWVsZFdyYXBwZXIsIMm1ZGVmaW5lSGlkZGVuUHJvcCBhcyBkZWZpbmVIaWRkZW5Qcm9wLCBGb3JtbHlGaWVsZENvbmZpZyB9IGZyb20gJ0BuZ3gtZm9ybWx5L2NvcmUnO1xuaW1wb3J0IHsgTWF0Rm9ybUZpZWxkIH0gZnJvbSAnQGFuZ3VsYXIvbWF0ZXJpYWwvZm9ybS1maWVsZCc7XG5pbXBvcnQgeyBNYXRGb3JtRmllbGRDb250cm9sIH0gZnJvbSAnQGFuZ3VsYXIvbWF0ZXJpYWwvZm9ybS1maWVsZCc7XG5pbXBvcnQgeyBTdWJqZWN0IH0gZnJvbSAncnhqcyc7XG5cbmltcG9ydCB7IEZpZWxkVHlwZSB9IGZyb20gJy4vZmllbGQudHlwZSc7XG5cbmludGVyZmFjZSBNYXRGb3JtbHlGaWVsZENvbmZpZyBleHRlbmRzIEZvcm1seUZpZWxkQ29uZmlnIHtcbiAgX21hdHByZWZpeDogVGVtcGxhdGVSZWY8YW55PjtcbiAgX21hdHN1ZmZpeDogVGVtcGxhdGVSZWY8YW55PjtcbiAgX19mb3JtRmllbGRfXzogRm9ybWx5V3JhcHBlckZvcm1GaWVsZDtcbiAgX2NvbXBvbmVudEZhY3Rvcnk6IGFueTtcbn1cblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnZm9ybWx5LXdyYXBwZXItbWF0LWZvcm0tZmllbGQnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDwhLS0gZml4IGh0dHBzOi8vZ2l0aHViLmNvbS9hbmd1bGFyL21hdGVyaWFsMi9wdWxsLzcwODMgYnkgc2V0dGluZyB3aWR0aCB0byAxMDAlIC0tPlxuICAgIDxtYXQtZm9ybS1maWVsZFxuICAgICAgW2hpZGVSZXF1aXJlZE1hcmtlcl09XCJ0cnVlXCJcbiAgICAgIFtmbG9hdExhYmVsXT1cInRvLmZsb2F0TGFiZWxcIlxuICAgICAgW2FwcGVhcmFuY2VdPVwidG8uYXBwZWFyYW5jZVwiXG4gICAgICBbY29sb3JdPVwidG8uY29sb3JcIlxuICAgICAgW3N0eWxlLndpZHRoXT1cIicxMDAlJ1wiPlxuICAgICAgPG5nLWNvbnRhaW5lciAjZmllbGRDb21wb25lbnQ+PC9uZy1jb250YWluZXI+XG4gICAgICA8bWF0LWxhYmVsICpuZ0lmPVwidG8ubGFiZWwgJiYgdG8uaGlkZUxhYmVsICE9PSB0cnVlXCI+XG4gICAgICAgIHt7IHRvLmxhYmVsIH19XG4gICAgICAgIDxzcGFuICpuZ0lmPVwidG8ucmVxdWlyZWQgJiYgdG8uaGlkZVJlcXVpcmVkTWFya2VyICE9PSB0cnVlXCIgY2xhc3M9XCJtYXQtZm9ybS1maWVsZC1yZXF1aXJlZC1tYXJrZXJcIj4qPC9zcGFuPlxuICAgICAgPC9tYXQtbGFiZWw+XG5cbiAgICAgIDxuZy1jb250YWluZXIgbWF0UHJlZml4PlxuICAgICAgICA8bmctY29udGFpbmVyICpuZ1RlbXBsYXRlT3V0bGV0PVwidG8ucHJlZml4ID8gdG8ucHJlZml4IDogZm9ybWx5RmllbGQuX21hdHByZWZpeFwiPjwvbmctY29udGFpbmVyPlxuICAgICAgPC9uZy1jb250YWluZXI+XG5cbiAgICAgIDxuZy1jb250YWluZXIgbWF0U3VmZml4PlxuICAgICAgICA8bmctY29udGFpbmVyICpuZ1RlbXBsYXRlT3V0bGV0PVwidG8uc3VmZml4ID8gdG8uc3VmZml4IDogZm9ybWx5RmllbGQuX21hdHN1ZmZpeFwiPjwvbmctY29udGFpbmVyPlxuICAgICAgPC9uZy1jb250YWluZXI+XG5cbiAgICAgIDwhLS0gZml4IGh0dHBzOi8vZ2l0aHViLmNvbS9hbmd1bGFyL21hdGVyaWFsMi9pc3N1ZXMvNzczNyBieSBzZXR0aW5nIGlkIHRvIG51bGwgIC0tPlxuICAgICAgPG1hdC1lcnJvciBbaWRdPVwibnVsbFwiPlxuICAgICAgICA8Zm9ybWx5LXZhbGlkYXRpb24tbWVzc2FnZSBbZmllbGRdPVwiZmllbGRcIj48L2Zvcm1seS12YWxpZGF0aW9uLW1lc3NhZ2U+XG4gICAgICA8L21hdC1lcnJvcj5cbiAgICAgIDwhLS0gZml4IGh0dHBzOi8vZ2l0aHViLmNvbS9hbmd1bGFyL21hdGVyaWFsMi9pc3N1ZXMvNzczNyBieSBzZXR0aW5nIGlkIHRvIG51bGwgIC0tPlxuICAgICAgPG1hdC1oaW50ICpuZ0lmPVwidG8uZGVzY3JpcHRpb25cIiBbaWRdPVwibnVsbFwiPnt7IHRvLmRlc2NyaXB0aW9uIH19PC9tYXQtaGludD5cbiAgICA8L21hdC1mb3JtLWZpZWxkPlxuICBgLFxuICBwcm92aWRlcnM6IFt7IHByb3ZpZGU6IE1hdEZvcm1GaWVsZENvbnRyb2wsIHVzZUV4aXN0aW5nOiBGb3JtbHlXcmFwcGVyRm9ybUZpZWxkIH1dLFxufSlcbmV4cG9ydCBjbGFzcyBGb3JtbHlXcmFwcGVyRm9ybUZpZWxkIGV4dGVuZHMgRmllbGRXcmFwcGVyPE1hdEZvcm1seUZpZWxkQ29uZmlnPiBpbXBsZW1lbnRzIE9uSW5pdCwgT25EZXN0cm95LCBNYXRGb3JtRmllbGRDb250cm9sPGFueT4sIEFmdGVyVmlld0luaXQsIEFmdGVyQ29udGVudENoZWNrZWQge1xuICBAVmlld0NoaWxkKCdmaWVsZENvbXBvbmVudCcsIHsgcmVhZDogVmlld0NvbnRhaW5lclJlZiB9KSBmaWVsZENvbXBvbmVudCE6IFZpZXdDb250YWluZXJSZWY7XG4gIEBWaWV3Q2hpbGQoTWF0Rm9ybUZpZWxkKSBmb3JtRmllbGQhOiBNYXRGb3JtRmllbGQ7XG5cbiAgc3RhdGVDaGFuZ2VzID0gbmV3IFN1YmplY3Q8dm9pZD4oKTtcbiAgX2Vycm9yU3RhdGUgPSBmYWxzZTtcbiAgcHJpdmF0ZSBpbml0aWFsR2FwQ2FsY3VsYXRlZCA9IGZhbHNlO1xuXG4gIGNvbnN0cnVjdG9yKHByaXZhdGUgcmVuZGVyZXI6IFJlbmRlcmVyMikge1xuICAgIHN1cGVyKCk7XG4gIH1cblxuICBuZ09uSW5pdCgpIHtcbiAgICB0aGlzLmZvcm1GaWVsZC5fY29udHJvbCA9IHRoaXM7XG4gICAgZGVmaW5lSGlkZGVuUHJvcCh0aGlzLmZpZWxkLCAnX19mb3JtRmllbGRfXycsIHRoaXMuZm9ybUZpZWxkKTtcblxuICAgIGNvbnN0IGZpZWxkQ29tcG9uZW50ID0gdGhpcy5mb3JtbHlGaWVsZFsnX2NvbXBvbmVudEZhY3RvcnknXTtcbiAgICBpZiAoZmllbGRDb21wb25lbnQgJiYgIShmaWVsZENvbXBvbmVudC5jb21wb25lbnRSZWYuaW5zdGFuY2UgaW5zdGFuY2VvZiBGaWVsZFR5cGUpKSB7XG4gICAgICBjb25zb2xlLndhcm4oYENvbXBvbmVudCAnJHtmaWVsZENvbXBvbmVudC5jb21wb25lbnQucHJvdG90eXBlLmNvbnN0cnVjdG9yLm5hbWV9JyBtdXN0IGV4dGVuZCAnRmllbGRUeXBlJyBmcm9tICdAbmd4LWZvcm1seS9tYXRlcmlhbCcuYCk7XG4gICAgfVxuXG4gICAgLy8gZml4IGZvciBodHRwczovL2dpdGh1Yi5jb20vYW5ndWxhci9tYXRlcmlhbDIvaXNzdWVzLzExNDM3XG4gICAgaWYgKHRoaXMuZm9ybWx5RmllbGQuaGlkZSAmJiB0aGlzLmZvcm1seUZpZWxkLnRlbXBsYXRlT3B0aW9ucyEuYXBwZWFyYW5jZSA9PT0gJ291dGxpbmUnKSB7XG4gICAgICB0aGlzLmluaXRpYWxHYXBDYWxjdWxhdGVkID0gdHJ1ZTtcbiAgICB9XG4gIH1cblxuICBuZ0FmdGVyQ29udGVudENoZWNrZWQoKSB7XG4gICAgaWYgKCF0aGlzLmluaXRpYWxHYXBDYWxjdWxhdGVkIHx8IHRoaXMuZm9ybWx5RmllbGQuaGlkZSkge1xuICAgICAgcmV0dXJuO1xuICAgIH1cblxuICAgIHRoaXMuZm9ybUZpZWxkLnVwZGF0ZU91dGxpbmVHYXAoKTtcbiAgICB0aGlzLmluaXRpYWxHYXBDYWxjdWxhdGVkID0gdHJ1ZTtcbiAgfVxuXG4gIG5nQWZ0ZXJWaWV3SW5pdCgpIHtcbiAgICAvLyB0ZW1wb3JhcnkgZml4IGZvciBodHRwczovL2dpdGh1Yi5jb20vYW5ndWxhci9tYXRlcmlhbDIvaXNzdWVzLzc4OTFcbiAgICBpZiAodGhpcy5mb3JtRmllbGQudW5kZXJsaW5lUmVmICYmIHRoaXMudG8uaGlkZUZpZWxkVW5kZXJsaW5lID09PSB0cnVlKSB7XG4gICAgICB0aGlzLnJlbmRlcmVyLnJlbW92ZUNsYXNzKHRoaXMuZm9ybUZpZWxkLnVuZGVybGluZVJlZi5uYXRpdmVFbGVtZW50LCAnbWF0LWZvcm0tZmllbGQtdW5kZXJsaW5lJyk7XG4gICAgICB0aGlzLnJlbmRlcmVyLnJlbW92ZUNsYXNzKHRoaXMuZm9ybUZpZWxkLnVuZGVybGluZVJlZi5uYXRpdmVFbGVtZW50LmZpcnN0Q2hpbGQsICdtYXQtZm9ybS1maWVsZC1yaXBwbGUnKTtcbiAgICB9XG4gIH1cblxuICBuZ09uRGVzdHJveSgpIHtcbiAgICBkZWxldGUgdGhpcy5mb3JtbHlGaWVsZC5fX2Zvcm1GaWVsZF9fO1xuICAgIHRoaXMuc3RhdGVDaGFuZ2VzLmNvbXBsZXRlKCk7XG4gIH1cblxuICBzZXREZXNjcmliZWRCeUlkcyhpZHM6IHN0cmluZ1tdKTogdm9pZCB7IH1cbiAgb25Db250YWluZXJDbGljayhldmVudDogTW91c2VFdmVudCk6IHZvaWQge1xuICAgIHRoaXMuZm9ybWx5RmllbGQuZm9jdXMgPSB0cnVlO1xuICAgIHRoaXMuc3RhdGVDaGFuZ2VzLm5leHQoKTtcbiAgfVxuXG4gIGdldCBlcnJvclN0YXRlKCkge1xuICAgIGNvbnN0IHNob3dFcnJvciA9IHRoaXMub3B0aW9ucyEuc2hvd0Vycm9yISh0aGlzKTtcbiAgICBpZiAoc2hvd0Vycm9yICE9PSB0aGlzLl9lcnJvclN0YXRlKSB7XG4gICAgICB0aGlzLl9lcnJvclN0YXRlID0gc2hvd0Vycm9yO1xuICAgICAgdGhpcy5zdGF0ZUNoYW5nZXMubmV4dCgpO1xuICAgIH1cblxuICAgIHJldHVybiBzaG93RXJyb3I7XG4gIH1cbiAgZ2V0IGNvbnRyb2xUeXBlKCkgeyByZXR1cm4gdGhpcy50by50eXBlOyB9XG4gIGdldCBmb2N1c2VkKCkgeyByZXR1cm4gISF0aGlzLmZvcm1seUZpZWxkLmZvY3VzICYmICF0aGlzLmRpc2FibGVkOyB9XG4gIGdldCBkaXNhYmxlZCgpIHsgcmV0dXJuICEhdGhpcy50by5kaXNhYmxlZDsgfVxuICBnZXQgcmVxdWlyZWQoKSB7IHJldHVybiAhIXRoaXMudG8ucmVxdWlyZWQ7IH1cbiAgZ2V0IHBsYWNlaG9sZGVyKCkgeyByZXR1cm4gdGhpcy50by5wbGFjZWhvbGRlciB8fCAnJzsgfVxuICBnZXQgc2hvdWxkUGxhY2Vob2xkZXJGbG9hdCgpIHsgcmV0dXJuIHRoaXMuc2hvdWxkTGFiZWxGbG9hdDsgfVxuICBnZXQgdmFsdWUoKSB7IHJldHVybiB0aGlzLmZvcm1Db250cm9sLnZhbHVlOyB9XG4gIGdldCBuZ0NvbnRyb2woKSB7IHJldHVybiB0aGlzLmZvcm1Db250cm9sIGFzIGFueTsgfVxuICBnZXQgZW1wdHkoKSB7IHJldHVybiAhdGhpcy5mb3JtQ29udHJvbC52YWx1ZTsgfVxuICBnZXQgc2hvdWxkTGFiZWxGbG9hdCgpIHsgcmV0dXJuIHRoaXMuZm9jdXNlZCB8fCAhdGhpcy5lbXB0eTsgfVxuXG4gIGdldCBmb3JtbHlGaWVsZCgpIHsgcmV0dXJuIHRoaXMuZmllbGQgYXMgTWF0Rm9ybWx5RmllbGRDb25maWc7IH1cbn1cbiJdfQ==

@@ -1,0 +1,17 @@
+<div class="container" id="transfer-type" fxLayout="row" fxLayout.xs="column">
+    <mat-card fxFlex="100%" fxFlex.sm="33.33%" *ngFor="let transferType of transferTypes; let i = index"
+        class="fund-transfer" (click)="highlightBox(i)" >
+        <mat-grid-list cols="" fxLayout="row wrap">
+            <mat-grid-tile class="transfer-way"  [ngClass]="{'transfer-type':true, 'selectfund': (selectedIndex === i) }">
+                <img [src]="transferType.img">
+                <p class="fund-transfer-bottom-text">{{ transferType.accInfo }}</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</div>
+<mat-divider></mat-divider>
+<div class="button-container">
+    <button mat-button class="ob-proceed-button">Proceed</button>
+    <button mat-button class="ob-cancel-button">Cancel</button>
+</div>
+

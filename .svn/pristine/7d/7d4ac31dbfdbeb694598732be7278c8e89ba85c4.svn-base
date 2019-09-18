@@ -1,0 +1,43 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { InquireTransactionsComponent } from './inquire-transactions/inquire-transactions.component';
+import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
+import { BillPaymentsComponent } from './bill-payments/bill-payments.component';
+import { TransferTypeComponent } from './fund-transfer/transfer-type/transfer-type.component';
+import { AmountComponent } from './fund-transfer//amount/amount.component';
+import { ConfirmationComponent } from './fund-transfer/confirmation/confirmation.component';
+import { BeneficiaryListComponent } from './fund-transfer/create-beneficiary/beneficiary-list/beneficiary-list.component';
+
+
+const routes: Routes = [
+  {
+    path: 'inquire-transactions',
+    component: InquireTransactionsComponent,
+    data: { title: 'Inquire Transactions' }
+  },
+  {
+    path: 'fund-transfer',
+    component: FundTransferComponent,
+    
+    children:[
+      {path:"transfer-type", component: TransferTypeComponent},
+      {path:'beneficiary', component : BeneficiaryListComponent},
+      {path:'amount', component: AmountComponent},
+      {path:'confirmation', component : ConfirmationComponent},
+      {path:'',redirectTo:'transfer-type', pathMatch:"full"},
+    ]
+  },
+  {
+    path: 'bill-payments',
+    component: BillPaymentsComponent,
+    data: { title: 'Bill Payments' },
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+
+export class TransactionsRoutingModule {}
+export const tabRoutingComponents = [ConfirmationComponent, AmountComponent, TransferTypeComponent, BeneficiaryListComponent]

@@ -1,0 +1,90 @@
+@mixin heading{
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: normal;
+    color: #777;
+}
+#confirmation{
+    h2{
+        @include heading;
+        font-size: 18px;
+    }
+    .account-transfer{
+        padding-top:20px;
+        h3{
+            @include heading;
+            font-size: 15px;
+            display: inline;
+            padding-left: 10px;
+            position: relative;
+            top:-7px;
+            color: #999;
+            font-weight: 400;
+        }
+    }
+    h4 {
+        @include heading;
+        color:#888;
+    }
+
+    .transferFormGroup {
+        fieldset{
+            border: 1px solid #ccc; 
+            margin-bottom: 20px;
+            legend {
+                color:#888;
+                font-size:12px;
+                font-family: Roboto;
+            }
+            input {
+                width: 100%;
+                border: none;
+            }
+        }
+    }
+    .ob-proceed-button {
+        padding: 0px 30px !important;
+        color: #716dff;
+        border: 1px solid #716dff;
+        background: #fff;
+        border-radius: 5px; 
+    }
+
+    .mat-card{
+        box-shadow: none;
+    }
+
+    .bankDetails{
+        color:#888;
+
+        p:first-child {
+            font-size:12px;
+        }
+    } 
+
+    .highlight-text {
+        height: 30px;
+        background-color: rgba(21, 180, 153, 0.07);
+        font-size: 12px;
+        color:#888;
+        font-weight: normal;
+        padding: 7px 0 0 10px;
+
+        ::before{
+            content: "ajay";
+            background: red;
+            width: 10px;
+            display: block;
+            height: 20px;
+        }
+
+        ::after{
+            content: " ";
+            border:1px solid #f30;
+            display: block;
+          }
+    }
+
+    
+}
+

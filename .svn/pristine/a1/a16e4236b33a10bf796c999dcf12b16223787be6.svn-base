@@ -1,0 +1,13 @@
+<div class="container" id="transfer-type" fxLayout="row" fxLayout.xs="column">
+    <mat-card fxFlex="100%" fxFlex.sm="33.33%" (click)="setColor('select-fund')" *ngFor="let transferType of transferTypes" class="fund-transfer" >
+            <mat-grid-list cols="" fxLayout="row wrap">
+                <mat-grid-tile class="transfer-way" [class.select-fund]="isSelected === 'select-fund' "> 
+                    <img [src]="transferType.img">
+                    <p class="fund-transfer-bottom-text">{{ transferType.accInfo }}</p>
+                </mat-grid-tile>
+            </mat-grid-list>
+    </mat-card>
+</div>
+<button mat-button  class="ob-proceed-button">
+    Proceed
+</button>

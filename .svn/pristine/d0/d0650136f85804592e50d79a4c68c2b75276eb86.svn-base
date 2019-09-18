@@ -1,0 +1,14 @@
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
+@Component({
+  selector: 'fund-transfer',
+  templateUrl: './fund-transfer.component.html',
+  styleUrls: ['./fund-transfer.component.scss'],
+  encapsulation: ViewEncapsulation.None
+})
+export class FundTransferComponent implements OnInit {
+ 
+  constructor() {}
+
+  ngOnInit() {}
+}

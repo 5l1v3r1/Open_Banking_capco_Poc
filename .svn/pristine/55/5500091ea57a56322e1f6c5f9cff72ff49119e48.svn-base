@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="30">
+            <mat-grid-tile [class.default-tile-border]="myaccountSelected" [class.select-beneficiary]="otherbeneficiarySelected" (click)="otherBeneficiaryToggle()">
+                <img src="./assets/images/fund-transfer/beneficiary/combined-shape.png" width="23">
+                <p class="accountType-bottom-text">Other Beneficiaries</p>
+            </mat-grid-tile>
+            <mat-grid-tile [class.default-tile-border]="otherbeneficiarySelected" [class.select-beneficiary]="myaccountSelected" (click)="myAccountToggle()">
+                <img src="./assets/images/fund-transfer/beneficiary/single.png" width="17">
+                <p class="accountType-bottom-text">My Accounts</p>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+<div *ngIf="otherbeneficiarySelected" id="otherbeneficiary proceed-cancel">
+    <app-other-beneficiary></app-other-beneficiary>
+</div>
+<div *ngIf="myaccountSelected" id="myaccount proceedCancel">
+    <app-my-account></app-my-account>
+</div>
+        

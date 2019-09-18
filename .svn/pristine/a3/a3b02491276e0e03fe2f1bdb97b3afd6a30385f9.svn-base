@@ -1,0 +1,43 @@
+<div id="transfer-details">
+    <h2>Transfer Type</h2>
+    <mat-divider></mat-divider>
+
+    <div class="account-transfer">
+        <img src="assets/images/fund-transfer/group-2.svg" width="28" height="28"/>
+        <h3>Account Transfer</h3>
+    </div>
+
+    <h4>Account Info</h4>
+   
+    <form class="transferFormGroup">
+            <div class="matero-col box" fxFlex.gt-sm="50" fxFlex="100" >
+                <fieldset>
+                    <legend>Account No. </legend>
+                    <input type="text" size="30">
+                </fieldset>
+
+                <fieldset>
+                    <legend>IBAN</legend>
+                    <input type="text" size="30">
+                </fieldset>
+            </div>
+            <div class="matero-col box" fxFlex.gt-sm="50" fxFlex="100" >
+                <fieldset>
+                    <legend>IFSC Code</legend>
+                    <input type="text" size="30">
+                </fieldset>
+    
+                <fieldset>
+                    <legend>SWIFT Code</legend>
+                    <input type="text" size="30">
+                </fieldset>
+            </div>
+        </form>
+        <mat-divider></mat-divider>
+
+        <button mat-button class="ob-proceed-button">
+            Proceed
+        </button> 
+
+
+</div>

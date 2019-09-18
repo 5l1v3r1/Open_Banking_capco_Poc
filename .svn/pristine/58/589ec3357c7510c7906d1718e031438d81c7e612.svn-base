@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../services/dashboard/dashboard-service';
+// src\app\routes\services\dashboard\dashboard-service.ts
+
+@Component({
+  selector: 'profile-info',
+  templateUrl: './profile-info.component.html',
+  styleUrls: ['./profile-info.component.scss']
+})
+export class ProfileInfoComponent implements OnInit {
+  resource = [];
+  constructor(private profile: DashboardService) { }
+
+  ngOnInit() {
+    this.profile.getProfileInfo().subscribe(data =>{
+      this.resource = data;
+    });
+  }
+
+}

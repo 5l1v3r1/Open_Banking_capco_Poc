@@ -1,0 +1,71 @@
+{
+  "_args": [
+    [
+      "@ngx-formly/material@5.3.0",
+      "C:\\Users\\sgpn\\Desktop\\ng-matero-master\\ng-matero-master"
+    ]
+  ],
+  "_from": "@ngx-formly/material@5.3.0",
+  "_id": "@ngx-formly/material@5.3.0",
+  "_inBundle": false,
+  "_integrity": "sha512-syT8Tf6vOqPsVrm8CcT3Rlp9SZdoxKDAnREoa/7XolMia+bnp9jrI1GYQLbXLNYuVBdHZ8Q10/tKB9Jzd4r9Ug==",
+  "_location": "/@ngx-formly/material",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ngx-formly/material@5.3.0",
+    "name": "@ngx-formly/material",
+    "escapedName": "@ngx-formly%2fmaterial",
+    "scope": "@ngx-formly",
+    "rawSpec": "5.3.0",
+    "saveSpec": null,
+    "fetchSpec": "5.3.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ngx-formly/material/-/material-5.3.0.tgz",
+  "_spec": "5.3.0",
+  "_where": "C:\\Users\\sgpn\\Desktop\\ng-matero-master\\ng-matero-master",
+  "bugs": {
+    "url": "https://github.com/ngx-formly/ngx-formly/issues"
+  },
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "description": "ngx-formly is an Angular 2 module which has a Components to help customize and render JavaScript/JSON configured forms. The formly-form Component and the FormlyConfig service are very powerful and bring unmatched maintainability to your application's forms.",
+  "es2015": "fesm2015/ngx-formly-material.js",
+  "esm2015": "esm2015/ngx-formly-material.js",
+  "esm5": "esm5/ngx-formly-material.js",
+  "fesm2015": "fesm2015/ngx-formly-material.js",
+  "fesm5": "fesm5/ngx-formly-material.js",
+  "homepage": "https://github.com/ngx-formly/ngx-formly#readme",
+  "keywords": [
+    "angular",
+    "forms",
+    "ngx-formly",
+    "formly",
+    "angular 2",
+    "angular 2 forms",
+    "json forms",
+    "form library",
+    "dynamic-forms"
+  ],
+  "license": "MIT",
+  "main": "bundles/ngx-formly-material.umd.js",
+  "metadata": "ngx-formly-material.metadata.json",
+  "module": "fesm5/ngx-formly-material.js",
+  "name": "@ngx-formly/material",
+  "peerDependencies": {
+    "@ngx-formly/core": "5.3.0",
+    "@angular/material": ">=7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngx-formly/ngx-formly.git"
+  },
+  "sideEffects": false,
+  "typings": "ngx-formly-material.d.ts",
+  "version": "5.3.0"
+}

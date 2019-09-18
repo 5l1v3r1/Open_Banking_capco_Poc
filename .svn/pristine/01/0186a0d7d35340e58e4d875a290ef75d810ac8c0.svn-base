@@ -1,0 +1,150 @@
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlySelectModule } from '@ngx-formly/core/select';
+import { MatSelectModule } from '@angular/material/select';
+import { Component, NgModule } from '@angular/core';
+import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
+import { MatPseudoCheckboxModule } from '@angular/material/core';
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyFieldSelect extends FieldType {
+    constructor() {
+        super(...arguments);
+        this.defaultOptions = {
+            templateOptions: { options: [] },
+        };
+    }
+    /**
+     * @return {?}
+     */
+    get value() { return this.formControl.value || []; }
+    /**
+     * @param {?} options
+     * @return {?}
+     */
+    getState(options) {
+        if (this.value.length > 0) {
+            return this.value.length !== options.length
+                ? 'indeterminate'
+                : 'checked';
+        }
+        return '';
+    }
+    /**
+     * @param {?} options
+     * @return {?}
+     */
+    toggleSelectAll(options) {
+        this.formControl.setValue(this.value.length !== options.length
+            ? options.map((/**
+             * @param {?} x
+             * @return {?}
+             */
+            x => x.value))
+            : []);
+    }
+    /**
+     * @param {?} $event
+     * @return {?}
+     */
+    change($event) {
+        if (this.to.change) {
+            this.to.change(this.field, $event);
+        }
+    }
+    /**
+     * @param {?} o1
+     * @param {?} o2
+     * @return {?}
+     */
+    compareWith(o1, o2) {
+        return o1 === o2;
+    }
+}
+FormlyFieldSelect.decorators = [
+    { type: Component, args: [{
+                selector: 'formly-field-mat-select',
+                template: `
+    <ng-template #selectAll let-selectOptions="selectOptions">
+      <mat-option (click)="toggleSelectAll(selectOptions)">
+        <mat-pseudo-checkbox class="mat-option-pseudo-checkbox"
+          [state]="getState(selectOptions)">
+        </mat-pseudo-checkbox>
+        {{ to.selectAllOption }}
+      </mat-option>
+    </ng-template>
+
+
+    <mat-select [id]="id"
+      [formControl]="formControl"
+      [formlyAttributes]="field"
+      [placeholder]="to.placeholder"
+      [tabindex]="to.tabindex || 0"
+      [compareWith]="to.compareWith || compareWith"
+      [multiple]="to.multiple"
+      (selectionChange)="change($event)"
+      [errorStateMatcher]="errorStateMatcher"
+      [aria-labelledby]="formField?._labelId"
+      [disableOptionCentering]="to.disableOptionCentering"
+      >
+      <ng-container *ngIf="to.options | formlySelectOptions:field | async as selectOptions">
+        <ng-container *ngIf="to.multiple && to.selectAllOption" [ngTemplateOutlet]="selectAll" [ngTemplateOutletContext]="{ selectOptions: selectOptions }">
+        </ng-container>
+        <ng-container *ngFor="let item of selectOptions">
+          <mat-optgroup *ngIf="item.group" [label]="item.label">
+            <mat-option *ngFor="let child of item.group" [value]="child.value" [disabled]="child.disabled">
+              {{ child.label }}
+            </mat-option>
+          </mat-optgroup>
+          <mat-option *ngIf="!item.group" [value]="item.value" [disabled]="item.disabled">{{ item.label }}</mat-option>
+        </ng-container>
+      </ng-container>
+    </mat-select>
+  `
+            }] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyMatSelectModule {
+}
+FormlyMatSelectModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [FormlyFieldSelect],
+                imports: [
+                    CommonModule,
+                    ReactiveFormsModule,
+                    MatSelectModule,
+                    MatPseudoCheckboxModule,
+                    FormlyMatFormFieldModule,
+                    FormlySelectModule,
+                    FormlyModule.forChild({
+                        types: [{
+                                name: 'select',
+                                component: FormlyFieldSelect,
+                                wrappers: ['form-field'],
+                            }],
+                    }),
+                ],
+            },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+export { FormlyMatSelectModule, FormlyFieldSelect };
+
+//# sourceMappingURL=ngx-formly-material-select.js.map

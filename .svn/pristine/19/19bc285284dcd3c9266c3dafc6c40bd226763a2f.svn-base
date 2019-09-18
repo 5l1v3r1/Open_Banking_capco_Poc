@@ -1,0 +1,31 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { InquireTransactionsComponent } from './inquire-transactions/inquire-transactions.component';
+import { FundTransferComponent } from './fund-transfer/fund-transfer.component';
+import { CreateBeneficiaryComponent } from './create-beneficiary/create-beneficiary.component';
+
+const routes: Routes = [
+  {
+    path: 'inquire-transactions',
+    component: InquireTransactionsComponent,
+    data: { title: 'Inquire Transactions' },
+  },
+  {
+    path: 'fund-transfer',
+    component: FundTransferComponent,
+    data: { title: 'Fund Transfer' },
+  },
+  {
+    path: 'create-beneficiary',
+    component: CreateBeneficiaryComponent,
+    data: { title: 'Create Beneficiary' },
+  }
+  
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+
+export class TransactionsRoutingModule {}

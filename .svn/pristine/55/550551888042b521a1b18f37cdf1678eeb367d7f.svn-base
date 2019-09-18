@@ -1,0 +1,42 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-beficiary-tab',
+  templateUrl: './beficiary-tab.component.html',
+  styleUrls: ['./beficiary-tab.component.scss']
+})
+export class BeficiaryTabComponent implements OnInit {
+  otherbeneficiarySelected: boolean;
+  myaccountSelected: boolean;
+  // resource = [];
+  constructor() {
+    this.otherbeneficiarySelected = false;
+    this.myaccountSelected = false;
+  }
+
+  myAccountToggle(event) {
+    if (!this.myaccountSelected) {
+      this.myaccountSelected = !this.myaccountSelected;
+      this.otherbeneficiarySelected = false;
+    } else {
+      event.preventDefault();
+    }
+  }
+
+  otherBeneficiaryToggle(event) {
+    if (!this.otherbeneficiarySelected) {
+      this.otherbeneficiarySelected = !this.otherbeneficiarySelected;
+      this.myaccountSelected = false;
+    } else {
+      event.preventDefault();
+    }
+  }
+
+  ngOnInit() {
+    // tslint:disable-next-line: deprecation
+    this.otherBeneficiaryToggle(event);
+    // this.beneficiaryTab.getOtherBeneficiary().subscribe(data => {
+    // this.resource = data;
+    // });
+  }
+}

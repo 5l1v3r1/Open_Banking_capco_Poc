@@ -1,0 +1,50 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { Component, ViewChild } from '@angular/core';
+import { MatInput } from '@angular/material/input';
+import { FieldType } from '@ngx-formly/material/form-field';
+export class FormlyFieldTextArea extends FieldType {
+    constructor() {
+        super(...arguments);
+        this.defaultOptions = {
+            templateOptions: {
+                cols: 1,
+                rows: 1,
+            },
+        };
+    }
+}
+FormlyFieldTextArea.decorators = [
+    { type: Component, args: [{
+                selector: 'formly-field-mat-textarea',
+                template: `
+    <textarea matInput
+      [id]="id"
+      [readonly]="to.readonly"
+      [formControl]="formControl"
+      [errorStateMatcher]="errorStateMatcher"
+      [cols]="to.cols"
+      [rows]="to.rows"
+      [formlyAttributes]="field"
+      [placeholder]="to.placeholder"
+      [tabindex]="to.tabindex || 0"
+      [readonly]="to.readonly"
+      [cdkTextareaAutosize]="to.autosize"
+      [cdkAutosizeMinRows]="to.autosizeMinRows"
+      [cdkAutosizeMaxRows]="to.autosizeMaxRows">
+    </textarea>
+  `
+            }] }
+];
+FormlyFieldTextArea.propDecorators = {
+    formFieldControl: [{ type: ViewChild, args: [MatInput,] }]
+};
+if (false) {
+    /** @type {?} */
+    FormlyFieldTextArea.prototype.formFieldControl;
+    /** @type {?} */
+    FormlyFieldTextArea.prototype.defaultOptions;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGV4dGFyZWEudHlwZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BuZ3gtZm9ybWx5L21hdGVyaWFsL3RleHRhcmVhLyIsInNvdXJjZXMiOlsidGV4dGFyZWEudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxTQUFTLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDN0QsT0FBTyxFQUFFLFFBQVEsRUFBRSxNQUFNLHlCQUF5QixDQUFDO0FBQ25ELE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxpQ0FBaUMsQ0FBQztBQXNCNUQsTUFBTSxPQUFPLG1CQUFvQixTQUFRLFNBQVM7SUFwQmxEOztRQXNCRSxtQkFBYyxHQUFHO1lBQ2YsZUFBZSxFQUFFO2dCQUNmLElBQUksRUFBRSxDQUFDO2dCQUNQLElBQUksRUFBRSxDQUFDO2FBQ1I7U0FDRixDQUFDO0lBQ0osQ0FBQzs7O1lBNUJBLFNBQVMsU0FBQztnQkFDVCxRQUFRLEVBQUUsMkJBQTJCO2dCQUNyQyxRQUFRLEVBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7R0FnQlQ7YUFDRjs7OytCQUVFLFNBQVMsU0FBQyxRQUFROzs7O0lBQW5CLCtDQUFpRDs7SUFDakQsNkNBS0UiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgVmlld0NoaWxkIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBNYXRJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL21hdGVyaWFsL2lucHV0JztcbmltcG9ydCB7IEZpZWxkVHlwZSB9IGZyb20gJ0BuZ3gtZm9ybWx5L21hdGVyaWFsL2Zvcm0tZmllbGQnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdmb3JtbHktZmllbGQtbWF0LXRleHRhcmVhJyxcbiAgdGVtcGxhdGU6IGBcbiAgICA8dGV4dGFyZWEgbWF0SW5wdXRcbiAgICAgIFtpZF09XCJpZFwiXG4gICAgICBbcmVhZG9ubHldPVwidG8ucmVhZG9ubHlcIlxuICAgICAgW2Zvcm1Db250cm9sXT1cImZvcm1Db250cm9sXCJcbiAgICAgIFtlcnJvclN0YXRlTWF0Y2hlcl09XCJlcnJvclN0YXRlTWF0Y2hlclwiXG4gICAgICBbY29sc109XCJ0by5jb2xzXCJcbiAgICAgIFtyb3dzXT1cInRvLnJvd3NcIlxuICAgICAgW2Zvcm1seUF0dHJpYnV0ZXNdPVwiZmllbGRcIlxuICAgICAgW3BsYWNlaG9sZGVyXT1cInRvLnBsYWNlaG9sZGVyXCJcbiAgICAgIFt0YWJpbmRleF09XCJ0by50YWJpbmRleCB8fCAwXCJcbiAgICAgIFtyZWFkb25seV09XCJ0by5yZWFkb25seVwiXG4gICAgICBbY2RrVGV4dGFyZWFBdXRvc2l6ZV09XCJ0by5hdXRvc2l6ZVwiXG4gICAgICBbY2RrQXV0b3NpemVNaW5Sb3dzXT1cInRvLmF1dG9zaXplTWluUm93c1wiXG4gICAgICBbY2RrQXV0b3NpemVNYXhSb3dzXT1cInRvLmF1dG9zaXplTWF4Um93c1wiPlxuICAgIDwvdGV4dGFyZWE+XG4gIGAsXG59KVxuZXhwb3J0IGNsYXNzIEZvcm1seUZpZWxkVGV4dEFyZWEgZXh0ZW5kcyBGaWVsZFR5cGUgaW1wbGVtZW50cyBPbkluaXQge1xuICBAVmlld0NoaWxkKE1hdElucHV0KSBmb3JtRmllbGRDb250cm9sITogTWF0SW5wdXQ7XG4gIGRlZmF1bHRPcHRpb25zID0ge1xuICAgIHRlbXBsYXRlT3B0aW9uczoge1xuICAgICAgY29sczogMSxcbiAgICAgIHJvd3M6IDEsXG4gICAgfSxcbiAgfTtcbn1cbiJdfQ==

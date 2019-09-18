@@ -1,0 +1,22 @@
+<breadcrumb></breadcrumb>
+
+<div class="matero-row ob-grids ob-dashboard" fxLayout="row wrap">
+  
+  <div class="matero-col" fxFlex.gt-sm="33" fxFlex="100">
+    <app-profile-info></app-profile-info>
+  </div>
+
+  <div class="matero-col" fxFlex.gt-sm="33" fxFlex="100">
+    <mat-card>
+      <mat-card-subtitle class="ob-bg-title">ASSET ALLOCATION</mat-card-subtitle>
+      <mat-card-content>
+        <div id="chart2"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="matero-col" fxFlex.gt-sm="33" fxFlex="100">
+    <app-recent-actions></app-recent-actions>
+  </div>
+
+</div>

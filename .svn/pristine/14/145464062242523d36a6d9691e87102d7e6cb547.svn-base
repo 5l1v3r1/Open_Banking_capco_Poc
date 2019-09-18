@@ -1,0 +1,73 @@
+@mixin heading{
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: normal;
+  color: #777;
+}
+
+#transfer-type {
+    margin-bottom: 10px;
+    box-shadow: none;
+    background-color: #fff;
+
+
+    h2{
+      @include heading;
+      font-size: 18px;
+      }
+  
+      h3{
+          @include heading;
+          font-size: 15px;
+          display: inline;
+          padding-left: 10px;
+          position: relative;
+          top:-7px;
+          color: #999;
+          font-weight: 400;
+      }
+    
+    mat-card {
+      padding:0px;
+      box-shadow: none;
+    }
+
+    ::ng-deep .mat-grid-list {
+      padding-bottom: calc(((80% - 0px) * 1) + 0px) !important;
+      .mat-grid-tile {
+        border: 1px solid #e4e6e5 !important;
+        padding-top: calc(((80% - 0px) * 1) + 0px) !important;
+        .mat-figure {
+          height: 90% !important;
+        }
+      }
+    }
+
+    .transfer-way {
+      position: absolute;
+      background: #fff;
+      //background-color: #eee;
+      border: 1px solid #e4e6e5;
+      height: 100px;
+    }
+    
+    .fund-transfer-bottom-text {
+      font-family: Roboto;
+      font-size: 14px;
+      color: #999;
+      position: absolute;
+      top: 60%;
+    }
+    
+    .selectfund {
+        background-color: #716dff;
+        .fund-transfer-bottom-text  {
+          color: #fff;
+        }
+    }
+
+  }
+  
+  .button-container {
+    margin-top:20px;
+  }

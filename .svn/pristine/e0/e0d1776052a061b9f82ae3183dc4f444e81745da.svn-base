@@ -1,0 +1,14 @@
+<mat-tab-group class="m--16">
+    <mat-tab label="1. TRANSFER TYPE"></mat-tab>
+    <mat-tab label="2. BENEFICIARY">
+        <div class="m-16">
+            <app-beneficiary-list></app-beneficiary-list>
+        </div>
+    </mat-tab>
+    <mat-tab label="3. TRANSFER DETAILS">
+    </mat-tab>
+    <mat-tab label="4. PAYMENT">
+    </mat-tab>
+    <mat-tab label="5. AMOUNT">
+    </mat-tab>
+</mat-tab-group>

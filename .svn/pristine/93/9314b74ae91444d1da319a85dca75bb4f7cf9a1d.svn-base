@@ -1,0 +1,36 @@
+.chart-diplay{
+  margin-top:-15px;
+}
+#menu{
+    margin-right:0px;
+}
+.bg-title{
+    height: 39.2px;
+    background-color: rgba(113, 109, 255, 0.7);
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+}
+
+.ob-bg-title {
+    height: 39.2px;
+    background-color: rgba(113, 109, 255, 0.7);
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 42px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

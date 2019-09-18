@@ -1,0 +1,107 @@
+<mat-card-subtitle class="text-uppercase">
+    <h4 class="f-w-500">beneficiary</h4>
+</mat-card-subtitle>
+<mat-divider></mat-divider>
+<div class="matero-row ob-dashboard" fxLayout="row wrap">
+    <div class="matero-col box" fxFlex.gt-sm="50" fxFlex="100" >
+        <mat-card-content>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position"> 
+                    <td mat-cell *matCellDef="let element">
+                        <mat-radio-group name="opList">
+                            <mat-radio-button value="{{element.name}}"></mat-radio-button>
+                        </mat-radio-group> 
+                    </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="name">
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="bankname">
+                    <td mat-cell *matCellDef="let element"> <img class="m-b-8" src="./assets/images/icons/{{element.bankname}}.png" class="group" width="16"> {{element.bankname}} </td>
+                </ng-container>
+                
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-card-content>
+    </div>
+    <div class="matero-col box" fxFlex.gt-sm="50" fxFlex="100" >
+        <mat-card-content>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position"> 
+                    <td mat-cell *matCellDef="let element">
+                        <mat-radio-group>
+                            <mat-radio-button value="{{element.position}}"></mat-radio-button>
+                        </mat-radio-group> 
+                    </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="name">
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="bankname">
+                    <td mat-cell *matCellDef="let element"> <img class="m-b-8" src="./assets/images/icons/{{element.bankname}}.png" class="group" width="16"> {{element.bankname}} </td>
+                </ng-container>
+                
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-card-content>
+    </div>
+</div>
+<!-- <mat-card-subtitle>
+    Select the beneficiary that you want to send money
+</mat-card-subtitle> -->
+<!-- <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="position"> 
+            <td mat-cell *matCellDef="let element">
+                <mat-radio-group>
+                    <mat-radio-button value="{{element.name}}"></mat-radio-button>
+                </mat-radio-group> 
+            </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="accountno">
+            <td mat-cell *matCellDef="let element"> {{element.accountno}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="bankname">
+            <td mat-cell *matCellDef="let element"> <img class="m-b-8" src="./assets/images/icons/{{element.bankname}}.png" class="group" width="16"> {{element.bankname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="viewdetails">
+            <td mat-cell *matCellDef="let element"> 
+                <a href="test.html?{{element.name}}">
+                    <img class="m-b-8" src="./assets/images/icons/view.png" class="group" width="16"> View
+                </a>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sendmoney">
+            <td mat-cell *matCellDef="let element">
+                <a href="test.html?{{element.name}}">
+                    <img class="m-b-8" src="./assets/images/icons/details.png" class="group" width="16"> Details
+                </a>
+            </td>
+        </ng-container>
+        
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</mat-card-content> -->
+
+<mat-card-content>
+    <h5 class="f-w-300">Create a new beneficiary if they are not listed</h5>
+    <button class="create-Beneficiary-Button">Create Beneficiary</button>
+</mat-card-content>
+
+<mat-card-content>
+    <button class="proceed-Button">Proceed</button>
+</mat-card-content>
+
+<app-add-beneficiary></app-add-beneficiary>

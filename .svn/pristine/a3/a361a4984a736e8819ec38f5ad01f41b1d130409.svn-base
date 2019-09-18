@@ -1,0 +1,92 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import * as tslib_1 from "tslib";
+import { Component, ViewChild } from '@angular/core';
+import { FieldType } from '@ngx-formly/material/form-field';
+import { MatCheckbox } from '@angular/material/checkbox';
+import { FocusMonitor } from '@angular/cdk/a11y';
+var FormlyFieldCheckbox = /** @class */ (function (_super) {
+    tslib_1.__extends(FormlyFieldCheckbox, _super);
+    function FormlyFieldCheckbox(focusMonitor) {
+        var _this = _super.call(this) || this;
+        _this.focusMonitor = focusMonitor;
+        _this.defaultOptions = {
+            templateOptions: {
+                hideFieldUnderline: true,
+                indeterminate: true,
+                floatLabel: 'always',
+                hideLabel: true,
+                align: 'start',
+            },
+        };
+        return _this;
+    }
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    FormlyFieldCheckbox.prototype.onContainerClick = /**
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        this.checkbox.focus();
+        _super.prototype.onContainerClick.call(this, event);
+    };
+    /**
+     * @return {?}
+     */
+    FormlyFieldCheckbox.prototype.ngAfterViewInit = /**
+     * @return {?}
+     */
+    function () {
+        var _this = this;
+        _super.prototype.ngAfterViewInit.call(this);
+        this.focusMonitor
+            .monitor(this.checkbox._inputElement.nativeElement)
+            .subscribe((/**
+         * @param {?} focusOrigin
+         * @return {?}
+         */
+        function (focusOrigin) { return _this.field.focus = !!focusOrigin; }));
+    };
+    /**
+     * @return {?}
+     */
+    FormlyFieldCheckbox.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        _super.prototype.ngOnDestroy.call(this);
+        this.focusMonitor.stopMonitoring(this.checkbox._inputElement.nativeElement);
+    };
+    FormlyFieldCheckbox.decorators = [
+        { type: Component, args: [{
+                    selector: 'formly-field-mat-checkbox',
+                    template: "\n    <mat-checkbox\n      [formControl]=\"formControl\"\n      [id]=\"id\"\n      [formlyAttributes]=\"field\"\n      [tabindex]=\"to.tabindex || 0\"\n      [indeterminate]=\"to.indeterminate && formControl.value === null\"\n      [color]=\"to.color\"\n      [labelPosition]=\"to.align || to.labelPosition\">\n      {{ to.label }}\n      <span *ngIf=\"to.required && to.hideRequiredMarker !== true\" class=\"mat-form-field-required-marker\">*</span>\n    </mat-checkbox>\n  "
+                }] }
+    ];
+    /** @nocollapse */
+    FormlyFieldCheckbox.ctorParameters = function () { return [
+        { type: FocusMonitor }
+    ]; };
+    FormlyFieldCheckbox.propDecorators = {
+        checkbox: [{ type: ViewChild, args: [MatCheckbox,] }]
+    };
+    return FormlyFieldCheckbox;
+}(FieldType));
+export { FormlyFieldCheckbox };
+if (false) {
+    /** @type {?} */
+    FormlyFieldCheckbox.prototype.checkbox;
+    /** @type {?} */
+    FormlyFieldCheckbox.prototype.defaultOptions;
+    /**
+     * @type {?}
+     * @private
+     */
+    FormlyFieldCheckbox.prototype.focusMonitor;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2hlY2tib3gudHlwZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BuZ3gtZm9ybWx5L21hdGVyaWFsL2NoZWNrYm94LyIsInNvdXJjZXMiOlsiY2hlY2tib3gudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsU0FBUyxFQUE0QixNQUFNLGVBQWUsQ0FBQztBQUMvRSxPQUFPLEVBQUUsU0FBUyxFQUFFLE1BQU0saUNBQWlDLENBQUM7QUFDNUQsT0FBTyxFQUFFLFdBQVcsRUFBRSxNQUFNLDRCQUE0QixDQUFDO0FBQ3pELE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxtQkFBbUIsQ0FBQztBQUVqRDtJQWdCeUMsK0NBQVM7SUFZaEQsNkJBQW9CLFlBQTBCO1FBQTlDLFlBQ0UsaUJBQU8sU0FDUjtRQUZtQixrQkFBWSxHQUFaLFlBQVksQ0FBYztRQVY5QyxvQkFBYyxHQUFHO1lBQ2YsZUFBZSxFQUFFO2dCQUNmLGtCQUFrQixFQUFFLElBQUk7Z0JBQ3hCLGFBQWEsRUFBRSxJQUFJO2dCQUNuQixVQUFVLEVBQUUsUUFBUTtnQkFDcEIsU0FBUyxFQUFFLElBQUk7Z0JBQ2YsS0FBSyxFQUFFLE9BQU87YUFDZjtTQUNGLENBQUM7O0lBSUYsQ0FBQzs7Ozs7SUFFRCw4Q0FBZ0I7Ozs7SUFBaEIsVUFBaUIsS0FBaUI7UUFDaEMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxLQUFLLEVBQUUsQ0FBQztRQUN0QixpQkFBTSxnQkFBZ0IsWUFBQyxLQUFLLENBQUMsQ0FBQztJQUNoQyxDQUFDOzs7O0lBRUQsNkNBQWU7OztJQUFmO1FBQUEsaUJBS0M7UUFKQyxpQkFBTSxlQUFlLFdBQUUsQ0FBQztRQUN4QixJQUFJLENBQUMsWUFBWTthQUNkLE9BQU8sQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLGFBQWEsQ0FBQyxhQUFhLENBQUM7YUFDbEQsU0FBUzs7OztRQUFDLFVBQUEsV0FBVyxJQUFJLE9BQUEsS0FBSSxDQUFDLEtBQUssQ0FBQyxLQUFLLEdBQUcsQ0FBQyxDQUFDLFdBQVcsRUFBaEMsQ0FBZ0MsRUFBQyxDQUFDO0lBQ2hFLENBQUM7Ozs7SUFFRCx5Q0FBVzs7O0lBQVg7UUFDRSxpQkFBTSxXQUFXLFdBQUUsQ0FBQztRQUNwQixJQUFJLENBQUMsWUFBWSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLGFBQWEsQ0FBQyxhQUFhLENBQUMsQ0FBQztJQUM5RSxDQUFDOztnQkEvQ0YsU0FBUyxTQUFDO29CQUNULFFBQVEsRUFBRSwyQkFBMkI7b0JBQ3JDLFFBQVEsRUFBRSw2ZEFZVDtpQkFDRjs7OztnQkFqQlEsWUFBWTs7OzJCQW1CbEIsU0FBUyxTQUFDLFdBQVc7O0lBK0J4QiwwQkFBQztDQUFBLEFBaERELENBZ0J5QyxTQUFTLEdBZ0NqRDtTQWhDWSxtQkFBbUI7OztJQUM5Qix1Q0FBK0M7O0lBQy9DLDZDQVFFOzs7OztJQUVVLDJDQUFrQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgVmlld0NoaWxkLCBBZnRlclZpZXdJbml0LCBPbkRlc3Ryb3kgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEZpZWxkVHlwZSB9IGZyb20gJ0BuZ3gtZm9ybWx5L21hdGVyaWFsL2Zvcm0tZmllbGQnO1xuaW1wb3J0IHsgTWF0Q2hlY2tib3ggfSBmcm9tICdAYW5ndWxhci9tYXRlcmlhbC9jaGVja2JveCc7XG5pbXBvcnQgeyBGb2N1c01vbml0b3IgfSBmcm9tICdAYW5ndWxhci9jZGsvYTExeSc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2Zvcm1seS1maWVsZC1tYXQtY2hlY2tib3gnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDxtYXQtY2hlY2tib3hcbiAgICAgIFtmb3JtQ29udHJvbF09XCJmb3JtQ29udHJvbFwiXG4gICAgICBbaWRdPVwiaWRcIlxuICAgICAgW2Zvcm1seUF0dHJpYnV0ZXNdPVwiZmllbGRcIlxuICAgICAgW3RhYmluZGV4XT1cInRvLnRhYmluZGV4IHx8IDBcIlxuICAgICAgW2luZGV0ZXJtaW5hdGVdPVwidG8uaW5kZXRlcm1pbmF0ZSAmJiBmb3JtQ29udHJvbC52YWx1ZSA9PT0gbnVsbFwiXG4gICAgICBbY29sb3JdPVwidG8uY29sb3JcIlxuICAgICAgW2xhYmVsUG9zaXRpb25dPVwidG8uYWxpZ24gfHwgdG8ubGFiZWxQb3NpdGlvblwiPlxuICAgICAge3sgdG8ubGFiZWwgfX1cbiAgICAgIDxzcGFuICpuZ0lmPVwidG8ucmVxdWlyZWQgJiYgdG8uaGlkZVJlcXVpcmVkTWFya2VyICE9PSB0cnVlXCIgY2xhc3M9XCJtYXQtZm9ybS1maWVsZC1yZXF1aXJlZC1tYXJrZXJcIj4qPC9zcGFuPlxuICAgIDwvbWF0LWNoZWNrYm94PlxuICBgLFxufSlcbmV4cG9ydCBjbGFzcyBGb3JtbHlGaWVsZENoZWNrYm94IGV4dGVuZHMgRmllbGRUeXBlIGltcGxlbWVudHMgQWZ0ZXJWaWV3SW5pdCwgT25EZXN0cm95IHtcbiAgQFZpZXdDaGlsZChNYXRDaGVja2JveCkgY2hlY2tib3ghOiBNYXRDaGVja2JveDtcbiAgZGVmYXVsdE9wdGlvbnMgPSB7XG4gICAgdGVtcGxhdGVPcHRpb25zOiB7XG4gICAgICBoaWRlRmllbGRVbmRlcmxpbmU6IHRydWUsXG4gICAgICBpbmRldGVybWluYXRlOiB0cnVlLFxuICAgICAgZmxvYXRMYWJlbDogJ2Fsd2F5cycsXG4gICAgICBoaWRlTGFiZWw6IHRydWUsXG4gICAgICBhbGlnbjogJ3N0YXJ0JywgLy8gc3RhcnQgb3IgZW5kXG4gICAgfSxcbiAgfTtcblxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIGZvY3VzTW9uaXRvcjogRm9jdXNNb25pdG9yKSB7XG4gICAgc3VwZXIoKTtcbiAgfVxuXG4gIG9uQ29udGFpbmVyQ2xpY2soZXZlbnQ6IE1vdXNlRXZlbnQpOiB2b2lkIHtcbiAgICB0aGlzLmNoZWNrYm94LmZvY3VzKCk7XG4gICAgc3VwZXIub25Db250YWluZXJDbGljayhldmVudCk7XG4gIH1cblxuICBuZ0FmdGVyVmlld0luaXQoKSB7XG4gICAgc3VwZXIubmdBZnRlclZpZXdJbml0KCk7XG4gICAgdGhpcy5mb2N1c01vbml0b3JcbiAgICAgIC5tb25pdG9yKHRoaXMuY2hlY2tib3guX2lucHV0RWxlbWVudC5uYXRpdmVFbGVtZW50KVxuICAgICAgLnN1YnNjcmliZShmb2N1c09yaWdpbiA9PiB0aGlzLmZpZWxkLmZvY3VzID0gISFmb2N1c09yaWdpbik7XG4gIH1cblxuICBuZ09uRGVzdHJveSgpIHtcbiAgICBzdXBlci5uZ09uRGVzdHJveSgpO1xuICAgIHRoaXMuZm9jdXNNb25pdG9yLnN0b3BNb25pdG9yaW5nKHRoaXMuY2hlY2tib3guX2lucHV0RWxlbWVudC5uYXRpdmVFbGVtZW50KTtcbiAgfVxufVxuIl19

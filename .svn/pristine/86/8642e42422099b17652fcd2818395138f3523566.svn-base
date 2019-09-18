@@ -1,0 +1,27 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { BeneficiaryService } from '../../../../services/beneficiary/beneficiary-service';
+
+@Component({
+  selector: 'app-my-account',
+  templateUrl: './my-account.component.html',
+  styleUrls: [
+    './my-account.component.scss',
+    '../other-beneficiary/other-beneficiary.component.scss'
+  ]
+})
+
+export class MyAccountComponent implements OnInit {
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  resource = [];
+  displayedColumns: string[] = ['selectBeneficiary', 'accountno', 'bankname', 'balance', 'edit', 'delete'];
+  constructor(private accountBeneficiary: BeneficiaryService) { }
+
+  ngOnInit() {
+    this.accountBeneficiary.getMyAccountBeneficiary().subscribe(data => {
+      this.resource = data;
+      // this.resource.paginator = this.paginator;
+    });
+  }
+}

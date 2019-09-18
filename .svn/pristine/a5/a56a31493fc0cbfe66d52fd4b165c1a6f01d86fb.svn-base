@@ -1,0 +1,14 @@
+import { MatSelectChange } from '@angular/material/select';
+import { FieldType } from '@ngx-formly/material/form-field';
+export declare class FormlyFieldSelect extends FieldType {
+    defaultOptions: {
+        templateOptions: {
+            options: never[];
+        };
+    };
+    readonly value: any;
+    getState(options: any[]): "" | "checked" | "indeterminate";
+    toggleSelectAll(options: any[]): void;
+    change($event: MatSelectChange): void;
+    compareWith(o1: any, o2: any): boolean;
+}

@@ -1,0 +1,27 @@
+<mat-tab-group animationDuration="0ms" id="menu-tab">
+    <mat-tab label="Transfer Type" class="tab-select" routerLink="/customers">
+        <h2 class="ob-title">Transfer Type</h2>
+        <mat-divider></mat-divider>
+        <p matline>Select the type of transfer that you wish to send</p>
+        <app-transfer-type></app-transfer-type>
+    </mat-tab>
+    <mat-tab label="Beneficiary" routerLink="/customers">
+        <app-beneficiary-list></app-beneficiary-list>
+    </mat-tab>
+    <!-- <mat-tab label="Transfer Details">
+        <app-transfer-details></app-transfer-details>
+    </mat-tab> -->
+    <mat-tab label="Amount">
+        <h2 class="ob-title">Amount</h2>
+        <mat-divider></mat-divider>
+        <app-amount></app-amount>
+    </mat-tab>
+    <mat-tab label="Confirmation">
+        <app-confirmation></app-confirmation>
+    </mat-tab>
+    <mat-tab label="Status">
+        <h2 class="ob-title">Status</h2>
+        <mat-divider></mat-divider>
+    </mat-tab>
+</mat-tab-group>
+<router-outlet></router-outlet>

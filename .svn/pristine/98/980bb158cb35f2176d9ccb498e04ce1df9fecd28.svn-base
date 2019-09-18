@@ -1,0 +1,72 @@
+$title-color:#ffffff;
+$background-color-bill-payment: #1194f6;
+$background-color-pay-card: #15b499;
+$background-color-fund-transfer: #5f7d8c;
+$background-color-open-fd : #716dff;
+$background-color-recent-action: rgba(113, 109, 255, 0.7);
+
+.bg-recent-action {
+    background-color: $background-color-recent-action;
+}
+.title-color {
+    color: $title-color;
+}
+.recent-action-subtitle {
+    text-transform: uppercase;
+    text-align: center;
+}
+.bg-bill-payment {
+    background-color: $background-color-bill-payment;
+}
+.bg-pay-card {
+    background-color: $background-color-pay-card;
+}
+.bg-fund-transfer {
+    background-color: $background-color-fund-transfer;
+}
+.bg-open-fd {
+    background-color: $background-color-open-fd;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+}
+.mat-raised-button:not([class*=mat-elevation-z]) {
+    top: 24px;
+}
+.bg-title{
+    height: 39.2px;
+    background-color: rgba(113, 109, 255, 0.7);
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+}
+.grid-margin-up {
+    margin-left: -30px;
+    position: absolute;
+}
+.grid-margin-down {
+    margin-left: -40px;
+    position: absolute;
+}
+.mat-raised-button {
+    line-height: 25px;
+    border-radius: 2px;
+    box-shadow: none;
+}
+.button-payment {
+    background-color: #31a4fb;
+}
+
+.button-pay {
+    background-color: #28ccb0;
+}
+.button-transfer {
+    background-color: #7b97a5;
+}
+.button-fd {
+    background-color: #8d8aff;
+}
+.grip-up-top {
+    top: 17px !important;
+}

@@ -1,0 +1,11 @@
+import { Component, OnInit } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
+
+@Component({
+  selector: 'create-beneficiary',
+  templateUrl: './create-beneficiary.component.html',
+  styleUrls: ['./create-beneficiary.component.scss']
+})
+
+export class CreateBeneficiaryComponent {
+}

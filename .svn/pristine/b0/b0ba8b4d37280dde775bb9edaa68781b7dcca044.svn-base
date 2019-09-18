@@ -1,0 +1,38 @@
+<mat-card id="amount-wrap">
+    <mat-card-content class="card1">
+            
+       <h4 class="heighlight-text">
+            Enter the amount to be transfered to the beneficiary
+       </h4> 
+       <input type="text" class="input-block">
+       <mat-divider></mat-divider>
+    </mat-card-content>
+   
+    <mat-card-content>
+        <mat-card-subtitle>
+                Select Source Account
+        </mat-card-subtitle>
+        <table mat-table [dataSource]="dataSource" class="w-full">
+            <ng-container matColumnDef="position">
+                <td mat-cell *matCellDef="let element">
+                    <mat-radio-group name="opList">
+                        <mat-radio-button value="{{element.position}}"></mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="bank_name">
+                <td mat-cell *matCellDef="let element"> 
+                        <img matListAvatar [src]="element.img" alt="" class="bank-icons">
+                    {{element.bank_name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="account_number">
+                <td mat-cell *matCellDef="let element"> {{element.account_number}} </td>
+            </ng-container>
+            <ng-container matColumnDef="amount">
+                <td mat-cell> Available Balance</td>
+                <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+            </ng-container>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card-content>
+</mat-card>

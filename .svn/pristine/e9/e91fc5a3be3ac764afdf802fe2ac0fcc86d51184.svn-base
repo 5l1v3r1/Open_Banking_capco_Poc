@@ -1,0 +1,46 @@
+#ob-payment-schedules {
+    .mat-list-avatar {
+        border-radius:0;
+    }
+    h3 {
+        color: #666666;
+        font-size: 14px;
+    }
+    .bank-icons {
+        width: 24px;
+        height: 24px;
+    }
+}
+.ob-bg-title {
+    height: 39.2px;
+    background-color: rgba(113, 109, 255, 0.7);
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 42px;
+}
+
+.ob-matline {
+    font-size: 12px !important;
+}
+
+.ob-currency {
+    font-size: 13px;
+    width: 47px;
+    color: #716dff;
+    font-weight: 500;
+}
+
+.ob-add-button {
+    border-radius: 2px;
+    border: solid 1px #716dff;
+}
+
+.ob-button-center {
+    text-align: center;
+    margin-top:20px;
+}
+
+.mat-list-text {
+    padding-right: 16px !important;
+}

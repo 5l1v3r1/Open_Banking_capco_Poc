@@ -1,0 +1,93 @@
+
+<div class="matero-row ob-dashboard" fxLayout="row wrap"
+>
+<!-- cdkDropList cdkDropListOrientation="horizontal"  (cdkDropListDropped)="onTaskDrop($event)" -->
+
+<!-- Charts -->
+
+  <div  class="matero-col box info" fxFlex.gt-sm="33" fxFlex="100"  cdkDrag>
+      <!-- *ngFor="let timePeriod of timePeriods"
+      cdkDrag (cdkDropListDropped)="onTaskDrop($event)" -->
+       <profile-info ></profile-info>
+
+  </div>
+
+  <div class="matero-col box info"  fxFlex.gt-sm="33" fxFlex="100" cdkDrag
+   cdkDrag >
+      <charts> </charts>
+  </div>
+
+  <div class="matero-col box info"  fxFlex.gt-sm="33" fxFlex="100"
+   cdkDrag >
+       <payment-schedules> </payment-schedules>
+  </div>
+
+  <!-- others -->
+   <div class="matero-col box " fxFlex.gt-sm="50" fxFlex="100"
+   cdkDrag>
+      <recent-action> </recent-action>
+
+  </div>
+
+  <div class="matero-col box  info" fxFlex.gt-sm="50" fxFlex="100" cdkDrag >
+     <transaction-list> </transaction-list>
+
+
+
+  </div>
+
+  <div class="matero-col box info" fxFlex.gt-sm="50" fxFlex="300" >
+
+ </div>
+
+ <div style ="">
+ <div class="box info1" >
+    <app-webcam></app-webcam>
+  </div>
+</div>
+
+
+  </div>
+
+<!-- <div class="drag-drop-container">
+<h3>Doing</h3>
+<div class="drag-drop-list" cdkDropList
+#todoList="cdkDropList" [cdkDropListData]="todo"
+[cdkDropListConnectedTo]="[todoList,activeList]" (cdkDropListDropped)="drop($event)">
+
+<div class="drag-drop-box"  *ngFor="let item of todoList" cdkDrag>
+<profile-info></profile-info>
+</div>
+</div>
+
+
+<div class="drag-drop-container">
+    <h3>Doing1</h3>
+    <div class="drag-drop-list" cdkDropList
+    #activeList="cdkDropList" [cdkDropListData]="activelist"
+    [cdkDropListConnectedTo]="[todoList,activeList]" (cdkDropListDropped)="drop($event)"
+    *ngFor="let item of activelist index as i">
+
+    <div class="drag-drop-box"  cdkDrag> -->
+    <!-- {{i+1}}.{{item}} -->
+    <!-- <charts></charts>
+    </div>
+    </div>
+    </div>
+
+    <div class="drag-drop-container">
+        <h3>Doing1</h3>
+        <div class="drag-drop-list" cdkDropList
+        #activeList="cdkDropList" [cdkDropListData]="activelist"
+        [cdkDropListConnectedTo]="[todoList,activeList]" (cdkDropListDropped)="drop($event)"
+        *ngFor="let item of activelist index as i">
+
+        <div class="drag-drop-box"  cdkDrag>
+
+        <charts></charts>
+        </div>
+        </div>
+        </div> -->
+
+
+

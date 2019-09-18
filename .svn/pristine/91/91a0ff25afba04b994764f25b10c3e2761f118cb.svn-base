@@ -1,0 +1,39 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import * as tslib_1 from "tslib";
+import { Component, ViewChild } from '@angular/core';
+import { MatInput } from '@angular/material/input';
+import { FieldType } from '@ngx-formly/material/form-field';
+var FormlyFieldTextArea = /** @class */ (function (_super) {
+    tslib_1.__extends(FormlyFieldTextArea, _super);
+    function FormlyFieldTextArea() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.defaultOptions = {
+            templateOptions: {
+                cols: 1,
+                rows: 1,
+            },
+        };
+        return _this;
+    }
+    FormlyFieldTextArea.decorators = [
+        { type: Component, args: [{
+                    selector: 'formly-field-mat-textarea',
+                    template: "\n    <textarea matInput\n      [id]=\"id\"\n      [readonly]=\"to.readonly\"\n      [formControl]=\"formControl\"\n      [errorStateMatcher]=\"errorStateMatcher\"\n      [cols]=\"to.cols\"\n      [rows]=\"to.rows\"\n      [formlyAttributes]=\"field\"\n      [placeholder]=\"to.placeholder\"\n      [tabindex]=\"to.tabindex || 0\"\n      [readonly]=\"to.readonly\"\n      [cdkTextareaAutosize]=\"to.autosize\"\n      [cdkAutosizeMinRows]=\"to.autosizeMinRows\"\n      [cdkAutosizeMaxRows]=\"to.autosizeMaxRows\">\n    </textarea>\n  "
+                }] }
+    ];
+    FormlyFieldTextArea.propDecorators = {
+        formFieldControl: [{ type: ViewChild, args: [MatInput,] }]
+    };
+    return FormlyFieldTextArea;
+}(FieldType));
+export { FormlyFieldTextArea };
+if (false) {
+    /** @type {?} */
+    FormlyFieldTextArea.prototype.formFieldControl;
+    /** @type {?} */
+    FormlyFieldTextArea.prototype.defaultOptions;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGV4dGFyZWEudHlwZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BuZ3gtZm9ybWx5L21hdGVyaWFsL3RleHRhcmVhLyIsInNvdXJjZXMiOlsidGV4dGFyZWEudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQVUsU0FBUyxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQzdELE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSx5QkFBeUIsQ0FBQztBQUNuRCxPQUFPLEVBQUUsU0FBUyxFQUFFLE1BQU0saUNBQWlDLENBQUM7QUFFNUQ7SUFvQnlDLCtDQUFTO0lBcEJsRDtRQUFBLHFFQTRCQztRQU5DLG9CQUFjLEdBQUc7WUFDZixlQUFlLEVBQUU7Z0JBQ2YsSUFBSSxFQUFFLENBQUM7Z0JBQ1AsSUFBSSxFQUFFLENBQUM7YUFDUjtTQUNGLENBQUM7O0lBQ0osQ0FBQzs7Z0JBNUJBLFNBQVMsU0FBQztvQkFDVCxRQUFRLEVBQUUsMkJBQTJCO29CQUNyQyxRQUFRLEVBQUUsdWhCQWdCVDtpQkFDRjs7O21DQUVFLFNBQVMsU0FBQyxRQUFROztJQU9yQiwwQkFBQztDQUFBLEFBNUJELENBb0J5QyxTQUFTLEdBUWpEO1NBUlksbUJBQW1COzs7SUFDOUIsK0NBQWlEOztJQUNqRCw2Q0FLRSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBWaWV3Q2hpbGQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IE1hdElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvbWF0ZXJpYWwvaW5wdXQnO1xuaW1wb3J0IHsgRmllbGRUeXBlIH0gZnJvbSAnQG5neC1mb3JtbHkvbWF0ZXJpYWwvZm9ybS1maWVsZCc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2Zvcm1seS1maWVsZC1tYXQtdGV4dGFyZWEnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDx0ZXh0YXJlYSBtYXRJbnB1dFxuICAgICAgW2lkXT1cImlkXCJcbiAgICAgIFtyZWFkb25seV09XCJ0by5yZWFkb25seVwiXG4gICAgICBbZm9ybUNvbnRyb2xdPVwiZm9ybUNvbnRyb2xcIlxuICAgICAgW2Vycm9yU3RhdGVNYXRjaGVyXT1cImVycm9yU3RhdGVNYXRjaGVyXCJcbiAgICAgIFtjb2xzXT1cInRvLmNvbHNcIlxuICAgICAgW3Jvd3NdPVwidG8ucm93c1wiXG4gICAgICBbZm9ybWx5QXR0cmlidXRlc109XCJmaWVsZFwiXG4gICAgICBbcGxhY2Vob2xkZXJdPVwidG8ucGxhY2Vob2xkZXJcIlxuICAgICAgW3RhYmluZGV4XT1cInRvLnRhYmluZGV4IHx8IDBcIlxuICAgICAgW3JlYWRvbmx5XT1cInRvLnJlYWRvbmx5XCJcbiAgICAgIFtjZGtUZXh0YXJlYUF1dG9zaXplXT1cInRvLmF1dG9zaXplXCJcbiAgICAgIFtjZGtBdXRvc2l6ZU1pblJvd3NdPVwidG8uYXV0b3NpemVNaW5Sb3dzXCJcbiAgICAgIFtjZGtBdXRvc2l6ZU1heFJvd3NdPVwidG8uYXV0b3NpemVNYXhSb3dzXCI+XG4gICAgPC90ZXh0YXJlYT5cbiAgYCxcbn0pXG5leHBvcnQgY2xhc3MgRm9ybWx5RmllbGRUZXh0QXJlYSBleHRlbmRzIEZpZWxkVHlwZSBpbXBsZW1lbnRzIE9uSW5pdCB7XG4gIEBWaWV3Q2hpbGQoTWF0SW5wdXQpIGZvcm1GaWVsZENvbnRyb2whOiBNYXRJbnB1dDtcbiAgZGVmYXVsdE9wdGlvbnMgPSB7XG4gICAgdGVtcGxhdGVPcHRpb25zOiB7XG4gICAgICBjb2xzOiAxLFxuICAgICAgcm93czogMSxcbiAgICB9LFxuICB9O1xufVxuIl19

@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../services/dashboard/dashboard-service';
+
+@Component({
+  selector: 'payment-schedules',
+  templateUrl: './payment-schedules.component.html',
+  styleUrls: ['./payment-schedules.component.scss']
+})
+export class PaymentSchedulesComponent implements OnInit {
+  resource = [];
+  constructor(private payment: DashboardService) {
+
+  }
+
+  ngOnInit() {
+    this.payment.getPaymentData().subscribe(data => {
+        this.resource = data;
+    });
+  }
+
+}

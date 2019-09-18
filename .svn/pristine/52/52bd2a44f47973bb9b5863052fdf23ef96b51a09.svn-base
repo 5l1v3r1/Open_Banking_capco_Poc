@@ -1,0 +1,30 @@
+
+<div class="matero-row ob-dashboard" fxLayout="row wrap">
+
+<!-- Charts -->
+
+  <div class="matero-col box" fxFlex.gt-sm="33" fxFlex="100" >
+      <profile-info></profile-info> 
+  </div>
+
+  <div class="matero-col box" fxFlex.gt-sm="33" fxFlex="100" >
+      <charts> </charts>
+  </div>
+
+  <div class="matero-col box" fxFlex.gt-sm="33" fxFlex="100" >
+       <payment-schedules> </payment-schedules>
+  </div>
+
+  <!-- others -->
+  <div class="matero-col box" fxFlex.gt-sm="50" fxFlex="100" >
+      <recent-action> </recent-action>
+  </div>
+
+  <div class="matero-col box" fxFlex.gt-sm="50" fxFlex="100" >
+     <transaction-list> </transaction-list>
+  </div>
+  
+</div>
+
+
+

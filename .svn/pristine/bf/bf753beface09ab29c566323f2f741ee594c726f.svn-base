@@ -1,0 +1,8 @@
+.cancel-Button {
+    border-radius: 5px;
+    border: solid 1px #ededed;
+    text-align: center;
+    color: #999999;
+    background-color: #ededed;
+    padding: 0px 30px;
+  }

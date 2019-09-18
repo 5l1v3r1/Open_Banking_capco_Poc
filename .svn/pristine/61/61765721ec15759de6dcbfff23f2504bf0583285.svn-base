@@ -1,0 +1,50 @@
+#menu-tab {
+    padding: 15px 40px;
+    background: #fff;
+
+    .ob-title {
+        margin-top: 30px;
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 500;
+        color: #777;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+  
+      p {
+        height: 12px;
+        font-family: Roboto;
+        font-size: 13px;
+        color: #999999;
+        margin-top: 30px;
+      }
+
+    ::ng-deep .mat-tab-header {
+        border-bottom:none;
+    }
+
+    .tab-select {
+        height: 40px;
+        border-radius: 2px;
+        background-color: #15b499;
+        color: white;
+    }
+}
+
+::ng-deep .mat-tab-label-active{
+    background-color: #15b499 !important;
+    height: 40px;
+    border-radius: 2px;
+    color: white;
+    opacity: 1 !important;
+}
+
+::ng-deep .matero-content-inner {
+    background: #f0f3f8 !important;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    visibility: hidden !important;
+  } 
+

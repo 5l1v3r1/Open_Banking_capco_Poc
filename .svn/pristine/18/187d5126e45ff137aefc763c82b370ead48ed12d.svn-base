@@ -1,0 +1,41 @@
+import { Component, OnInit } from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+
+export interface OtherBeneficiaryElement {
+  position: string;
+  name: string;
+  accountno: number;
+  bankname: string;
+  edit: string;
+  delete: string;
+}
+
+const ELEMENT_DATA: OtherBeneficiaryElement[] = [
+  {position: '1', name: 'Luis Ford', accountno: 24566768654374, bankname: 'HDFC Bank', edit: '', delete: ''},
+  {position: '2', name: 'Russell Stanley', accountno: 65437585764666, bankname: 'ABC Bank', edit: '', delete: ''},
+  {position: '3', name: 'Steve Hoffman', accountno: 43256473478945, bankname: 'Deutsche Bank', edit: '', delete: ''},
+  {position: '4', name: 'Beneficiary Name', accountno: 34789375657838, bankname: 'DBS Bank', edit: '', delete: ''},
+  {position: '5', name: 'Amanda Rhodes', accountno: 88645388983736, bankname: 'Citibank', edit: '', delete: ''}
+];
+
+@Component({
+  selector: 'app-other-beneficiary',
+  templateUrl: './other-beneficiary.component.html',
+  styleUrls: ['./other-beneficiary.component.scss',
+  '../my-account/my-account.component.scss'
+]
+})
+
+/**
+ * @title Basic use of `<table mat-table>`
+ */
+
+export class OtherBeneficiaryComponent implements OnInit {
+  displayedColumns: string[] = ['position', 'name', 'accountno', 'bankname', 'edit', 'delete'];
+  dataSource = ELEMENT_DATA;
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

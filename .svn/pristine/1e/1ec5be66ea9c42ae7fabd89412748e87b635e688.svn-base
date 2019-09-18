@@ -1,0 +1,57 @@
+<div class="matero-row ob-dashboard" fxLayout="row wrap" id="otherbeneficiary">
+    <div class="matero-col box" fxFlex.gt-sm="100" fxFlex="100">
+        <mat-card-content>
+                <table mat-table [dataSource]="resource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="selectBeneficiary">
+                        <td mat-cell *matCellDef="let element">
+                            <mat-radio-group name="optionBeneficiary">
+                                <mat-radio-button value="{{element.accountno}}"></mat-radio-button>
+                            </mat-radio-group>
+                        </td>
+                    </ng-container>
+  
+                <ng-container matColumnDef="name">
+                    <td mat-cell *matCellDef="let element"> {{element.name}}</td>
+                </ng-container>
+        
+               <ng-container matColumnDef="accountno">
+                    <td mat-cell *matCellDef="let element"> {{element.accountno}}</td>
+                </ng-container>
+            
+                <ng-container matColumnDef="bankname">
+                    <td mat-cell *matCellDef="let element">
+                        <img class="m-b-8" src="./assets/images/fund-transfer/beneficiary/{{element.bankname}}.png" class="group" width="10"> 
+                        {{element.bankname}} 
+                    </td>
+                </ng-container>
+        
+                <ng-container matColumnDef="edit">
+                    <td mat-cell *matCellDef="let element"> 
+                        <img class="m-b-8" src="./assets/images/fund-transfer/beneficiary/group.png" class="group" width="16"> 
+                        {{element.edit}}
+                    </td>
+                </ng-container>
+        
+                <ng-container matColumnDef="delete">
+                    <td mat-cell *matCellDef="let element">
+                        <img class="m-b-8" src="./assets/images/fund-transfer/beneficiary/shape.png" class="group" width="16"> 
+                        {{element.delete}}
+                    </td>
+                </ng-container> -->
+                
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-card-content>
+    </div>
+</div>
+<div id="proceed-cancel">
+    <mat-card-content>
+        <button mat-button class="create-Beneficiary-Button">Create Beneficiary</button>
+    </mat-card-content>
+            
+    <mat-card-content>
+        <button mat-button class="proceed-Button" routerLink="../amount">Proceed</button>&nbsp;
+        <button mat-button class="cancel-Button" routerLink="../transfer-type">Cancel</button>
+    </mat-card-content>
+</div>
+<mat-paginator [pageSizeOptions]="[5,10,15]"></mat-paginator>

@@ -1,0 +1,25 @@
+$background-color-blue: #716dff;
+$color-white:#ffffff;
+
+table {
+    width: 100%;
+  }
+
+.create-Beneficiary-Button {
+  color: $color-white;
+  border-radius: 2px;
+  background-color: $background-color-blue;
+  border: solid 1px $background-color-blue;
+}
+
+.proceed-Button {
+  border-radius: 2px;
+  border: solid 1px $background-color-blue;
+  text-align: center;
+  color: $background-color-blue;
+  background-color: $color-white;
+}
+
+.matero-row {
+  margin-top: 45px;
+}

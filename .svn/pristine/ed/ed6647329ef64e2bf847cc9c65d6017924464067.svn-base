@@ -1,0 +1,38 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import * as tslib_1 from "tslib";
+import { Component, ViewChild } from '@angular/core';
+import { FieldType } from '@ngx-formly/material/form-field';
+import { MatInput } from '@angular/material/input';
+var FormlyFieldNativeSelect = /** @class */ (function (_super) {
+    tslib_1.__extends(FormlyFieldNativeSelect, _super);
+    function FormlyFieldNativeSelect() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.defaultOptions = {
+            templateOptions: {
+                options: [],
+            },
+        };
+        return _this;
+    }
+    FormlyFieldNativeSelect.decorators = [
+        { type: Component, args: [{
+                    selector: 'formly-field-mat-native-select',
+                    template: "\n    <select matNativeControl\n      [id]=\"id\"\n      [readonly]=\"to.readonly\"\n      [errorStateMatcher]=\"errorStateMatcher\"\n      [formControl]=\"formControl\"\n      [formlyAttributes]=\"field\">\n      <option *ngIf=\"to.placeholder\" [ngValue]=\"null\">{{ to.placeholder }}</option>\n      <ng-container *ngFor=\"let item of to.options | formlySelectOptions:field | async\">\n        <optgroup *ngIf=\"item.group\" label=\"{{item.label}}\">\n          <option *ngFor=\"let child of item.group\" [ngValue]=\"child.value\" [disabled]=\"child.disabled\">\n            {{ child.label }}\n          </option>\n        </optgroup>\n        <option *ngIf=\"!item.group\" [ngValue]=\"item.value\" [disabled]=\"item.disabled\">{{ item.label }}</option>\n      </ng-container>\n    </select>\n  "
+                }] }
+    ];
+    FormlyFieldNativeSelect.propDecorators = {
+        formFieldControl: [{ type: ViewChild, args: [MatInput,] }]
+    };
+    return FormlyFieldNativeSelect;
+}(FieldType));
+export { FormlyFieldNativeSelect };
+if (false) {
+    /** @type {?} */
+    FormlyFieldNativeSelect.prototype.formFieldControl;
+    /** @type {?} */
+    FormlyFieldNativeSelect.prototype.defaultOptions;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmF0aXZlLXNlbGVjdC50eXBlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQG5neC1mb3JtbHkvbWF0ZXJpYWwvbmF0aXZlLXNlbGVjdC8iLCJzb3VyY2VzIjpbIm5hdGl2ZS1zZWxlY3QudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsU0FBUyxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ3JELE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxpQ0FBaUMsQ0FBQztBQUM1RCxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0seUJBQXlCLENBQUM7QUFFbkQ7SUFxQjZDLG1EQUFTO0lBckJ0RDtRQUFBLHFFQTRCQztRQUxDLG9CQUFjLEdBQUc7WUFDZixlQUFlLEVBQUU7Z0JBQ2YsT0FBTyxFQUFFLEVBQUU7YUFDWjtTQUNGLENBQUM7O0lBQ0osQ0FBQzs7Z0JBNUJBLFNBQVMsU0FBQztvQkFDVCxRQUFRLEVBQUUsZ0NBQWdDO29CQUMxQyxRQUFRLEVBQUUsZ3lCQWlCVDtpQkFDRjs7O21DQUVFLFNBQVMsU0FBQyxRQUFROztJQU1yQiw4QkFBQztDQUFBLEFBNUJELENBcUI2QyxTQUFTLEdBT3JEO1NBUFksdUJBQXVCOzs7SUFDbEMsbURBQWlEOztJQUNqRCxpREFJRSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgVmlld0NoaWxkIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBGaWVsZFR5cGUgfSBmcm9tICdAbmd4LWZvcm1seS9tYXRlcmlhbC9mb3JtLWZpZWxkJztcbmltcG9ydCB7IE1hdElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvbWF0ZXJpYWwvaW5wdXQnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdmb3JtbHktZmllbGQtbWF0LW5hdGl2ZS1zZWxlY3QnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDxzZWxlY3QgbWF0TmF0aXZlQ29udHJvbFxuICAgICAgW2lkXT1cImlkXCJcbiAgICAgIFtyZWFkb25seV09XCJ0by5yZWFkb25seVwiXG4gICAgICBbZXJyb3JTdGF0ZU1hdGNoZXJdPVwiZXJyb3JTdGF0ZU1hdGNoZXJcIlxuICAgICAgW2Zvcm1Db250cm9sXT1cImZvcm1Db250cm9sXCJcbiAgICAgIFtmb3JtbHlBdHRyaWJ1dGVzXT1cImZpZWxkXCI+XG4gICAgICA8b3B0aW9uICpuZ0lmPVwidG8ucGxhY2Vob2xkZXJcIiBbbmdWYWx1ZV09XCJudWxsXCI+e3sgdG8ucGxhY2Vob2xkZXIgfX08L29wdGlvbj5cbiAgICAgIDxuZy1jb250YWluZXIgKm5nRm9yPVwibGV0IGl0ZW0gb2YgdG8ub3B0aW9ucyB8IGZvcm1seVNlbGVjdE9wdGlvbnM6ZmllbGQgfCBhc3luY1wiPlxuICAgICAgICA8b3B0Z3JvdXAgKm5nSWY9XCJpdGVtLmdyb3VwXCIgbGFiZWw9XCJ7e2l0ZW0ubGFiZWx9fVwiPlxuICAgICAgICAgIDxvcHRpb24gKm5nRm9yPVwibGV0IGNoaWxkIG9mIGl0ZW0uZ3JvdXBcIiBbbmdWYWx1ZV09XCJjaGlsZC52YWx1ZVwiIFtkaXNhYmxlZF09XCJjaGlsZC5kaXNhYmxlZFwiPlxuICAgICAgICAgICAge3sgY2hpbGQubGFiZWwgfX1cbiAgICAgICAgICA8L29wdGlvbj5cbiAgICAgICAgPC9vcHRncm91cD5cbiAgICAgICAgPG9wdGlvbiAqbmdJZj1cIiFpdGVtLmdyb3VwXCIgW25nVmFsdWVdPVwiaXRlbS52YWx1ZVwiIFtkaXNhYmxlZF09XCJpdGVtLmRpc2FibGVkXCI+e3sgaXRlbS5sYWJlbCB9fTwvb3B0aW9uPlxuICAgICAgPC9uZy1jb250YWluZXI+XG4gICAgPC9zZWxlY3Q+XG4gIGAsXG59KVxuZXhwb3J0IGNsYXNzIEZvcm1seUZpZWxkTmF0aXZlU2VsZWN0IGV4dGVuZHMgRmllbGRUeXBlIHtcbiAgQFZpZXdDaGlsZChNYXRJbnB1dCkgZm9ybUZpZWxkQ29udHJvbCE6IE1hdElucHV0O1xuICBkZWZhdWx0T3B0aW9ucyA9IHtcbiAgICB0ZW1wbGF0ZU9wdGlvbnM6IHtcbiAgICAgIG9wdGlvbnM6IFtdLFxuICAgIH0sXG4gIH07XG59XG4iXX0=

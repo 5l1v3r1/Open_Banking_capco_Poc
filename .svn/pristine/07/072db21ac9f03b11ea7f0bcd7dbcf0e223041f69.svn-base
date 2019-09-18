@@ -1,0 +1,21 @@
+import { AfterViewInit, OnDestroy } from '@angular/core';
+import { FieldType } from '@ngx-formly/material/form-field';
+import { MatCheckbox } from '@angular/material/checkbox';
+import { FocusMonitor } from '@angular/cdk/a11y';
+export declare class FormlyFieldCheckbox extends FieldType implements AfterViewInit, OnDestroy {
+    private focusMonitor;
+    checkbox: MatCheckbox;
+    defaultOptions: {
+        templateOptions: {
+            hideFieldUnderline: boolean;
+            indeterminate: boolean;
+            floatLabel: string;
+            hideLabel: boolean;
+            align: string;
+        };
+    };
+    constructor(focusMonitor: FocusMonitor);
+    onContainerClick(event: MouseEvent): void;
+    ngAfterViewInit(): void;
+    ngOnDestroy(): void;
+}

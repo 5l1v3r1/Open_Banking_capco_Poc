@@ -1,0 +1,8 @@
+<mat-card-subtitle class="text-uppercase">
+    <h4 class="f-w-500">beneficiary</h4>
+</mat-card-subtitle>
+<mat-divider></mat-divider>
+
+<app-beficiary-tab></app-beficiary-tab>
+
+<!-- <app-add-beneficiary></app-add-beneficiary> -->
